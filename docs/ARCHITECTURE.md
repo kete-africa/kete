@@ -1,93 +1,165 @@
 # Architecture
 
-## Les couches
+> Ce qui est **tranché** renvoie à une décision (`D-xxx`). Ce qui est marqué **proposition** attend
+> la validation de l'auteur.
 
-```
-Qui s'en sert     Toi et ton équipe      Commerçants          Entreprises
-Guichets          Kete Ops (MCP)         Kete (MCP)           Socle de l'entreprise
-Ce qui tourne     Kete Cockpit           Kete Apps            Kete Enterprise (une instance chacune)
-La fabrique       contrats · SDK · capacités · châssis · design · Pono pour chaque changement
-Infra commune     GitHub · Coolify · Neon · Infisical · surveillance · sauvegardes · Moneroo
-```
+## 1. Les principes d'architecture
 
-## Trois règles
+1. **Générique d'abord (D-014).** Le code métier parle à des **ports** (interfaces) ; les
+   fournisseurs vivent dans des **adaptateurs**. Aucun nom de fournisseur dans le domaine.
+2. **Le contrat d'abord.** Les échanges entre services sont décrits en JSON Schema versionné ;
+   les types TypeScript et Python en sont générés.
+3. **Chaque app est un monolithe modulaire** : domaine, application, infrastructure. Ses surfaces
+   (web, API, MCP, worker) appellent les mêmes services applicatifs.
+4. **L'organisation est la frontière.** Chaque table porte l'organisation, avec RLS écrite dans la
+   migration qui crée la table.
+5. **Chaque app reste autonome.** Elle a sa base, son outbox, ses rôles métier ; elle continue de
+   servir ses utilisateurs connectés si Kete Cockpit ou un guichet tombe.
+6. **Une base par service**, jamais de lecture dans la base d'un autre : on se référence par
+   identifiant (personne, organisation, produit).
+7. **Tout changement de code passe par Pono.**
 
-1. **Chaque produit est autonome** : il fonctionne même si Kete Cockpit ou un guichet tombe.
-2. **Rien ne traverse les organisations** : chaque entreprise a son instance et son guichet ; Kete
-   ne voit que des agrégats.
-3. **Tout changement de code passe par Pono** : garde-fous, validation humaine, retour arrière.
+## 2. La carte du système
 
-## Kete Cockpit
+| Service | Pour qui | Rôle |
+|---|---|---|
+| **Compte Kete** | Tout le monde | Identité, organisations, rôles d'organisation, abonnements (proposition), paramètres génériques, OAuth pour les apps et le MCP |
+| **Mon espace Kete** (D-013) | Le client | Le centre unique : ses apps, son organisation, ses abonnements, ses paramètres |
+| **Kete Apps** | Le client et ses équipes | Firmo, Nettio, Nyatefe : le métier |
+| **Kete Cockpit** | L'équipe Kete (puis d'autres porteurs de produits) | Administrer les produits : événements, santé, brief, points d'attention |
+| **Guichets MCP** | Les agents | Kete Ops pour l'équipe, Kete pour les clients |
+| **Pono** | Ceux qui construisent | Le chemin sûr des changements de code |
 
-La plateforme d'administration des produits (la « plateforme centrale » des premières réflexions).
-Kete en est le premier client.
+## 3. Le Compte Kete (D-011)
 
-- **Ce qu'il détient** : le registre des apps, un miroir minimal des personnes et des abonnements,
-  les événements métier, des instantanés quotidiens, les points d'attention, les échéances,
-  l'audit, les rapports.
-- **Ce qu'il ne détient pas** : les données métier des apps, les mots de passe, les données de
-  paiement, les logs détaillés (restés dans les outils).
-- **Sorties** : brief du matin (Telegram), alertes, console (mobile d'abord), MCP.
-- **V0** : registre, réception des événements, sondes de santé, instantanés, brief, MCP en lecture.
-  Multi-organisation et RLS dès la première migration.
+- Construit sur **Better Auth**, dans un service à lui : `compte.kete.africa` (nom à confirmer).
+- **Connexion par e-mail** par défaut (mot de passe ou lien magique) ; téléphone plus tard.
+- **Organisations** : une entreprise cliente est une organisation, avec ses membres et un rôle
+  d'organisation (propriétaire, administrateur, membre).
+- **Fournisseur d'identité** pour toutes les apps (connexion unique) et **serveur d'autorisation
+  OAuth** pour le MCP.
+- **Le jeton** transporte : la personne, l'organisation active, son rôle d'organisation, les apps
+  auxquelles l'organisation a accès.
+- **Opérateurs Kete** : identité séparée, double authentification obligatoire.
 
-## Les contrats
+## 4. Mon espace Kete (D-013)
 
-Chaque app respecte des contrats versionnés (JSON Schema), sources de vérité des SDK :
+Le centre unique du client, servi par le Compte Kete :
+
+- **Mes outils** : les liens vers ses apps Kete, avec leur état.
+- **Mon organisation** : membres, invitations, rôle d'organisation de chacun.
+- **Mes abonnements** : apps, formules, échéances, factures, paiement (via le port de paiement).
+- **Paramètres génériques, saisis une fois, utilisés partout** :
+  - identité de l'entreprise : nom, logo, adresse, contacts, identifiants légaux (RCCM, NIF) ;
+    Firmo s'en sert pour l'en-tête des devis, Nettio pour ses tickets ;
+  - langue, fuseau horaire, devise ;
+  - canaux de notification préférés (e-mail, WhatsApp, Telegram).
+- **Sécurité** : sessions actives, double authentification.
+- **Mes données** : export, suppression, et le journal des accès du support Kete.
+- **Besoin d'aide** : le bouton de retour, relié au support.
+
+Chaque app garde ses **paramètres propres** (tarifs d'un pressing, modèles de devis) chez elle.
+
+## 5. Les rôles, sur trois niveaux
+
+| Niveau | Où | Exemple |
+|---|---|---|
+| Organisation | Compte Kete | Propriétaire, administrateur, membre ; apps accessibles |
+| Métier | Dans chaque app | Nettio : gérant, caissier, atelier, livreur, par agence |
+| Agent | Le jeton de la personne | Jamais plus de droits que la personne ; échelle d'autonomie |
+
+L'accès d'un opérateur Kete au compte d'un client est limité dans le temps, motivé, audité et
+**visible par le client** dans Mon espace Kete.
+
+## 6. Les ports et leurs adaptateurs (D-014)
+
+| Port | Premier adaptateur | Suivants possibles |
+|---|---|---|
+| Paiement | **Chariow** (D-012) | Moneroo, Stripe |
+| Messages | E-mail transactionnel (Brevo ou Resend) | WhatsApp, Telegram, via Novu |
+| Identité (côté app) | Compte Kete | Identité du socle pour Kete Enterprise |
+| Fichiers | Stockage S3 (Neon ou autre) | Garage, SeaweedFS |
+| Modèle d'IA | Claude | Tout autre modèle : les skills restent portables |
+| Hébergement | Coolify | — |
+| Code et changements | GitHub, via Pono | — |
+| Secrets | Variables Coolify, puis Infisical | — |
+| Surveillance | Uptime Kuma, GlitchTip | — |
+
+## 7. Le paiement (D-012)
+
+1. Le client choisit une formule dans Mon espace Kete (ou depuis une app).
+2. Le port de paiement crée une session de paiement chez **Chariow** et renvoie le lien.
+3. Le client paie sur la page Chariow.
+4. Chariow notifie le Compte Kete (webhook « Pulses »), qui vérifie la vente auprès de Chariow.
+5. L'abonnement de l'organisation devient actif ; le prochain jeton porte l'accès à l'app.
+6. Un événement `payment.succeeded` part vers Kete Cockpit par l'outbox.
+
+**Proposition** : la facturation des apps Kete est **centralisée dans le Compte Kete** (un client,
+un compte, une facture, et des offres groupées possibles). Les apps lisent l'accès dans le jeton et
+gardent un délai de grâce si le Compte Kete est momentanément injoignable.
+
+## 8. Les contrats et les événements
 
 | Contrat | Contenu |
 |---|---|
 | `manifest.v1` | Identité de l'app, environnements, santé, événements émis, capacités |
 | `event.v1` | Enveloppe d'événement signée (HMAC horodaté) |
 | `health.v1` | État de l'app et de ses dépendances |
-| `admin.v1` | API admin standard : rechercher, suspendre, reprendre, prolonger un essai, accès support |
-| `capability.v1` | Un geste métier : public, entrée, niveau d'autonomie, réversibilité |
+| `admin.v1` | API de l'espace opérateur |
+| `capability.v1` | Un geste métier exposé par MCP, avec son niveau d'autonomie |
 
-Les apps écrivent leurs événements dans une **outbox** de leur propre base, envoyée par lots : si
-Cockpit tombe, rien ne bloque l'utilisateur. Les concepts sont alignés sur ceux de KYA-Platform,
-sans en copier le code tant que la propriété n'est pas réglée.
+Événements standard : `account.created`, `account.activated`, `payment.succeeded`,
+`payment.failed`, `subscription.renewal_due`, `account.closed`, `metrics.daily`. Aucune donnée
+métier détaillée ne quitte l'app : des faits et des compteurs.
 
-## Les trois niveaux d'administration
+## 9. Kete Cockpit
 
-| Niveau | Qui | Où |
-|---|---|---|
-| Admin du client | Le patron du pressing | Dans l'app, propre au métier |
-| Espace opérateur Kete | Le support Kete | Dans l'app, section protégée, via un module commun |
-| Transverse | L'auteur, pour tout le portefeuille | Kete Cockpit |
+- **Détient** : registre des produits, événements, sondes, instantanés quotidiens, points
+  d'attention, échéances, briefs, audit.
+- **Flux** : événements (app vers Cockpit, par l'outbox), santé (Cockpit vers `/health`, chaque
+  minute), manifeste (chaque jour), instantanés (chaque nuit), brief (8 h, Telegram), MCP Kete Ops
+  (à la demande), surveillance externe par Uptime Kuma (VPS séparé).
+- **Plus tard** : déploiements et erreurs reliés aux incidents, espace opérateur, fiche client
+  transverse, revenus, provisioning, rapports, ouverture à d'autres porteurs de produits.
 
-L'accès d'un opérateur au compte d'un client est limité dans le temps, motivé, audité et **visible
-par le client**.
+## 10. L'architecture interne d'une app
 
-## Les guichets MCP
+```
+Surfaces      web (PWA) · API · MCP · worker
+Application   cas d'usage : « créer un dépôt », « préparer un devis »
+Domaine       règles du métier, sans aucun fournisseur
+Ports         paiement, messages, fichiers, identité, événements, IA
+Adaptateurs   Chariow, e-mail, S3, Compte Kete, outbox, modèle d'IA
+```
 
-- **Kete Ops** : les gestes d'opérateur de tous les produits, pour l'équipe Kete.
-- **Kete** : les capacités des apps auxquelles un commerçant est abonné ; premier utilisateur :
-  l'agent WhatsApp de Kete.
-- **Le socle de chaque entreprise** : ses outils, ses apps, ses MCP.
+Chaque app reçoit du châssis : connexion au Compte Kete, outbox et événements, `/health` et
+manifeste, module de l'espace opérateur, déclaration des capacités, port de paiement, bouton de
+retour, design system.
 
-Chaque produit **déclare ses capacités une seule fois** ; les guichets les exposent, vérifient les
-droits et appliquent le niveau d'autonomie. Jamais de guichet commun à plusieurs organisations.
+## 11. Données et déploiement
 
-## Identité
+- **Neon** : une base par service (Compte Kete, Cockpit, chaque app), des branches pour les
+  préversions, région Francfort.
+- **Coolify** : zone ops (Compte Kete, Cockpit), zone produits (apps), plus tard zone clients.
+- **Uptime Kuma sur un VPS séparé.**
+- **Secrets** hors des dépôts ; sauvegardes testées par restauration.
+- **Domaines** (proposition) : `kete.africa` (site), `compte.kete.africa`,
+  `cockpit.kete.africa`, et un sous-domaine ou un domaine propre par app.
 
-- **Commerçants** : un Compte Kete par numéro de téléphone et code à usage unique (Better Auth,
-  base de Neon Auth ; vérifier que Neon Auth expose le plugin).
-- **Entreprises** : l'identité du socle (Neon Auth), et pour les outils tiers Entra ID si
-  Microsoft 365, sinon Zitadel ou Authentik.
-- **Opérateurs Kete** : identité séparée, double authentification.
-- Pas de Keycloak par défaut.
+## 12. Les dépôts (proposition)
 
-## Paiement
+| Dépôt | Contenu |
+|---|---|
+| `kete` | La doctrine (ce dépôt) |
+| `kete-core` | Contrats, paquets partagés (`@kete/sdk`, `auth`, `admin`, `capabilities`, `payments`, `feedback`, `notify`, `design`), service Compte Kete et Mon espace Kete, châssis |
+| `kete-cockpit` | L'app d'administration, qui consomme `kete-core` comme les autres apps |
+| `firmo`, `nettio`, `nyatefe` | Les apps métier |
+| `pono` | Inchangé |
 
-**Moneroo** (orchestration, ne détient pas l'argent) derrière une interface `PaymentProvider` du
-châssis. Chaque client garde son propre compte marchand. Les renouvellements vivent dans un module
-du châssis. Stripe pour les cartes internationales si besoin.
+## 13. Questions ouvertes
 
-## Infrastructure
-
-- Trois zones sur Coolify : **ops** (Cockpit, surveillance, notifications), **produits**,
-  **clients**.
-- Surveillance de disponibilité sur un **VPS séparé**.
-- Sauvegardes restic vers un stockage externe, **restauration testée**.
-- Catalogue d'outils open source validés pour les entreprises, choisis sur la qualité de leur API
-  plutôt que sur leur interface (les outils deviennent implicites derrière les capacités).
+1. **La pile par défaut des nouvelles apps** : tout en TypeScript (TanStack Start, cohérent avec
+   Better Auth), ou TypeScript pour l'interface et FastAPI pour le serveur (comme Pono et KYA) ?
+2. **La facturation** : centralisée dans le Compte Kete (proposition) ou propre à chaque app ?
+3. **Les dépôts** : `kete-core` et `kete-cockpit` séparés, comme proposé ?
+4. **Les domaines** des services et des apps.

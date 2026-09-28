@@ -71,3 +71,31 @@ et elle vient du kete lui-même (bandes et blocs tissés), pas d'une marque étr
 
 **Ce que ça coûte.** Veiller à ce que Kete Apps restent chaleureuses pour les commerçants : plus de
 rouge, une voix chaleureuse, les racines dans les illustrations.
+
+## D-011 — Le Compte Kete repose sur Better Auth, connexion par e-mail
+
+**Tranché le 2026-09-28** par l'auteur (« De base, on utilise le mail pour se connecter », « on
+utilise Better Auth »). **Remplace D-009** pour les apps Kete.
+
+**Tranché ainsi.** Un service Compte Kete, construit sur Better Auth, donne un seul compte pour
+toutes les apps Kete. Connexion par **e-mail** par défaut ; le téléphone pourra venir ensuite
+comme option. Pas de Keycloak. Les entreprises de Kete Enterprise gardent l'identité de leur socle.
+
+## D-012 — Le paiement commence par Chariow, derrière un port générique
+
+**Tranché le 2026-09-28** par l'auteur (« on va commencer par Chariow »). **Remplace D-008.**
+
+**Tranché ainsi.** Le paiement passe par une interface générique ; Chariow est le premier
+adaptateur. Moneroo, Stripe ou d'autres pourront suivre sans toucher aux apps. L'argent d'un
+client de Kete Enterprise ne transite jamais par Kete.
+
+## D-013 — Mon espace Kete : le centre unique du client
+
+**Tranché le 2026-09-28** par l'auteur. Chaque client dispose d'un centre unique où il retrouve les
+liens vers ses outils Kete et quelques paramètres clés génériques, communs à toutes les apps.
+
+## D-014 — Tout élément externe passe par un port générique
+
+**Tranché le 2026-09-28** par l'auteur (« on rédige générique afin qu'on ait des adapters pour
+paiement et tout élément »). Paiement, messages, fichiers, hébergement, surveillance, IA : le
+code des apps parle à une interface ; le nom du fournisseur ne vit que dans l'adaptateur.

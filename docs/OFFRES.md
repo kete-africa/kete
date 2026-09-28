@@ -14,7 +14,7 @@ Des outils du quotidien, chacun pensé pour un métier, simples comme un message
 | **Nyatefe** | Les entreprises du BTP | [À DÉCRIRE PAR L'AUTEUR] |
 | **Kete Cockpit** | Celui qui fait tourner des produits | Administrer ses produits au même endroit : santé, utilisateurs, paiements, support, brief du matin, agent |
 
-- **Un seul Compte Kete**, par numéro de téléphone.
+- **Un seul Compte Kete**, connexion par e-mail (D-011).
 - **Des tarifs au rythme de la recette** : jour ou semaine, en mobile money (proposition).
 - **Gagner un métier avant d'en ouvrir un autre.**
 - **Kete Cockpit** sert d'abord à Kete pour ses propres apps, puis s'ouvre aux autres. Il est

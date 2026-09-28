@@ -34,7 +34,7 @@ panne simulée déclenche une alerte ; l'agent répond sur l'état des apps.
 ## Étape 2 — Un métier gagné dans Kete Apps
 
 - [ ] Choisir le métier (Nettio ou Firmo) et le tarif au rythme de la recette.
-- [ ] Compte Kete par téléphone, paiement Moneroo.
+- [ ] Compte Kete (Better Auth, e-mail) et paiement par Chariow, via Mon espace Kete.
 - [ ] La carte de vérification et les brouillons préparés par l'agent.
 
 **Preuve** : des clients payants l'utilisent encore après 90 jours.
