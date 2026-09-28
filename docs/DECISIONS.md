@@ -57,6 +57,17 @@ L'argent d'un client ne transite jamais par Kete.
 Commerçants : Compte Kete par téléphone. Entreprises : identité du socle. Keycloak seulement si un
 déclencheur réel apparaît.
 
-## D-010 — Style visuel : en discussion
+## D-010 — Le style visuel est la v1 rectangle
 
-v0 (arrondie) ou v1 rectangle (rigueur géométrique, bande kete). **Non tranché.**
+**Tranché le 2026-09-28** par l'auteur (« Mets le style v1 rectangle »). Remplace la v0 arrondie.
+
+**Tranché ainsi.** La rigueur de la forme, la chaleur de la matière : rayons de 0 à 2 px, filets de
+1 px, grille de 12 colonnes, Archivo élargie pour les titres, étiquettes rectangulaires avec un
+carré de couleur, et la bande kete comme signature géométrique. La palette, le logo aux racines,
+Instrument Sans et JetBrains Mono ne changent pas.
+
+**Pourquoi.** La géométrie rectangulaire dit la précision et la solidité (la vérité des chiffres),
+et elle vient du kete lui-même (bandes et blocs tissés), pas d'une marque étrangère.
+
+**Ce que ça coûte.** Veiller à ce que Kete Apps restent chaleureuses pour les commerçants : plus de
+rouge, une voix chaleureuse, les racines dans les illustrations.

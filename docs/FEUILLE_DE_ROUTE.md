@@ -16,7 +16,7 @@
 - [ ] Nom sécurisé : kete.africa, dépôt OAPI, comptes sur les réseaux.
 - [ ] Société : Vitatech → Kete (dénomination au RCCM ou nouvelle société), avec un comptable.
 - [ ] Vision, mandat et horizons complétés par l'auteur (`FONDEMENT.md`, `VISION.md`, `MANDAT.md`).
-- [ ] Style visuel tranché (D-010), puis `@kete/design`.
+- [x] Style visuel tranché : v1 rectangle (D-010) ; reste `@kete/design`.
 
 **Preuve** : un client peut signer un contrat avec Kete, et chaque affirmation du site a sa ligne
 dans le registre de vérité.

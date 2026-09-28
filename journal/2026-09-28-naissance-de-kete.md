@@ -27,5 +27,5 @@ Le chemin de la réflexion, du 23 au 28 septembre 2026, pour ne pas le perdre.
     Porsche, rattachée à la géométrie du kete (la bande kete). Le logo perd son fil entrelacé, qui
     faisait lire un « A ».
 
-Questions ouvertes : la vision à 1, 3 et 10 ans ; ce que Kete ne fera jamais ; le style v0 ou v1 ;
+Questions ouvertes : la vision à 1, 3 et 10 ans ; ce que Kete ne fera jamais ;
 la description de Nyatefe ; la place publique du fondement.

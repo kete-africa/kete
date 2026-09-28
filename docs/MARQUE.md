@@ -58,15 +58,26 @@ Règles du rouge :
 - Le rouge vif associé au noir évoque le deuil dans certaines traditions de la région : à valider
   localement pour les grands aplats sombres avec élément rouge.
 
-## Style : en discussion (voir D-010)
+## Style : v1 rectangle (D-010)
 
-- **v0** : angles arrondis, Bricolage Grotesque pour les titres.
-- **v1 rectangle** (préférée par l'agent, inspirée de la rigueur de Porsche sans la copier) :
-  rayons 0 à 2 px, filets de 1 px, grille de 12 colonnes, Archivo élargie pour les titres,
-  étiquettes rectangulaires avec un carré de couleur, et la **bande kete** (blocs rectangulaires
-  rouge, ocre, terre) comme signature géométrique.
-- Communs : Instrument Sans pour le texte, JetBrains Mono pour les chiffres (chasse fixe, alignés à
-  droite), zones tactiles d'au moins 44 px.
+La rigueur de la forme, la chaleur de la matière. Inspirée de la rigueur de Porsche sans la copier,
+rattachée à la géométrie du kete.
+
+- **Formes** : rayon 0 pour les sections et les cartes, 2 px pour les boutons, champs et
+  étiquettes, 22 % seulement pour l'icône d'app. Séparations par filets de 1 px, jamais par des
+  ombres ni des cartes arrondies.
+- **Grille** : 12 colonnes, gouttières de 16 px (24 px sur le site).
+- **Titres** : Archivo élargie (`font-stretch` 118 %), 600 à 700. Petits titres de section en
+  capitales espacées.
+- **Texte** : Instrument Sans. **Chiffres** : JetBrains Mono, chasse fixe, alignés à droite.
+- **Étiquettes** : rectangulaires, avec un petit carré de couleur (lisibles sans voir les couleurs).
+- **La bande kete** : blocs rectangulaires latérite, ocre, terre, racine, braise. Fine (6 à 10 px)
+  en tête de page et de carte importante, large sur les supports imprimés. Jamais derrière du texte.
+- **Zones tactiles** d'au moins 44 px.
+- **Kete Apps** : même système, avec plus de rouge, une voix chaleureuse et les racines dans les
+  illustrations, pour rester accueillantes.
+
+La v0 (angles arrondis, Bricolage Grotesque) est abandonnée.
 
 Maquettes : toile de design « Kete — logo et design system »
 (https://claude.ai/artifact/RuHZXFNH1jwLKLLUonQT7q, privée).
