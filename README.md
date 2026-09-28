@@ -17,6 +17,7 @@ décisions et sa feuille de route. Le code des produits vit dans leurs propres d
 | `docs/OFFRES.md` | Kete Apps, Kete Consulting, Kete Enterprise |
 | `docs/MARQUE.md` | Nom, logo, couleurs, typographie, voix |
 | `docs/ARCHITECTURE.md` | Les guichets, les contrats, les dépôts, l'infrastructure |
+| `docs/ARCHITECTURE_APP.md` | L'architecture interne d'une app Kete |
 | `docs/DECISIONS.md` | Ce qui est tranché, et pourquoi |
 | `docs/VERITE_ET_PREUVES.md` | Le registre de ce qu'on peut affirmer |
 | `docs/FEUILLE_DE_ROUTE.md` | Les étapes et leurs preuves de fin |

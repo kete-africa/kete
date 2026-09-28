@@ -99,20 +99,3 @@ liens vers ses outils Kete et quelques paramètres clés génériques, communs �
 **Tranché le 2026-09-28** par l'auteur (« on rédige générique afin qu'on ait des adapters pour
 paiement et tout élément »). Paiement, messages, fichiers, hébergement, surveillance, IA : le
 code des apps parle à une interface ; le nom du fournisseur ne vit que dans l'adaptateur.
-
-## D-015 — TypeScript par défaut pour Kete Core, le Compte Kete, Kete Cockpit et les nouvelles apps
-
-**Validé le 2026-09-28** par l'auteur. Une seule langue de la base à l'écran (TanStack Start,
-Drizzle, Better Auth). Python reste là où il est (Pono, socle KYA) et pour de futurs traitements
-lourds, en workers séparés branchés par les contrats.
-
-## D-016 — La facturation des apps Kete est centralisée dans le Compte Kete
-
-**Validé le 2026-09-28** par l'auteur. Un client, un compte, une facture, offres groupées
-possibles. Les apps lisent l'accès dans le jeton et gardent un délai de grâce.
-
-## D-017 — Deux dépôts : `kete-core` et `kete-cockpit`
-
-**Validé le 2026-09-28** par l'auteur. `kete-core` porte les contrats, les paquets partagés, le
-Compte Kete, Mon espace Kete et le châssis ; `kete-cockpit` est une app qui le consomme comme les
-autres.
