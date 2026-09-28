@@ -99,3 +99,16 @@ liens vers ses outils Kete et quelques paramètres clés génériques, communs �
 **Tranché le 2026-09-28** par l'auteur (« on rédige générique afin qu'on ait des adapters pour
 paiement et tout élément »). Paiement, messages, fichiers, hébergement, surveillance, IA : le
 code des apps parle à une interface ; le nom du fournisseur ne vit que dans l'adaptateur.
+
+## D-015 — Les apps sont découpées par features, avec des écrans conçus pour chaque métier
+
+**Tranché le 2026-09-28** par l'auteur (« Je préfère la manière d'avant… Il faut toujours des
+écrans adaptés et propres »).
+
+**Tranché ainsi.** Chaque app est un monolithe modulaire découpé en features ; chaque feature porte
+ses couches (domaine, commandes, requêtes, politiques, infrastructure, écrans, capacités). Les
+écrans sont **conçus pour chaque métier**, jamais générés. Le châssis fournit les briques communes
+(brouillons, vérification, audit, outbox, ports), pas les écrans métier.
+
+**Reporté.** La proposition d'un « noyau Kete » qui génère formulaires, API et outils à partir de
+déclarations est gardée pour plus tard (`journal/2026-09-28-noyau-kete-reporte.md`).
