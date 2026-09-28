@@ -112,3 +112,21 @@ ses couches (domaine, commandes, requêtes, politiques, infrastructure, écrans,
 
 **Reporté.** La proposition d'un « noyau Kete » qui génère formulaires, API et outils à partir de
 déclarations est gardée pour plus tard (`journal/2026-09-28-noyau-kete-reporte.md`).
+
+## D-016 — Tout en TypeScript
+
+**Tranché le 2026-09-28** par l'auteur (« Oui, tout en typescript »). Répond à la question 1 de
+`ARCHITECTURE.md`.
+
+**Tranché ainsi.** Le Compte Kete, Kete Cockpit, `kete-core` et les nouvelles apps sont écrits en
+TypeScript strict. Pile de référence : TanStack Start (React), Zod, Drizzle et Postgres (Neon),
+Better Auth, une file de tâches dans Postgres (pg-boss), le SDK MCP officiel, Tailwind 4 et
+`@kete/design`, Paraglide pour les traductions, Vitest et Playwright, ESLint et Prettier, et un
+contrôle des frontières entre features. Python reste pour Pono, le socle KYA et d'éventuels
+traitements lourds branchés par les contrats.
+
+## D-017 — Documentation dans le dépôt, avec des schémas tenus à jour
+
+**Tranché le 2026-09-28** par l'auteur (« Il faut la gestion de la docs avec des schémas au fur et à
+mesure »). Règles dans `CONCEPTION.md`, partie E : Markdown et Mermaid à côté du code, mis à jour
+dans la même pull request, une partie générée depuis le code et vérifiée en CI.

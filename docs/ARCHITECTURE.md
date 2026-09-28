@@ -158,8 +158,7 @@ retour, design system.
 
 ## 13. Questions ouvertes
 
-1. **La pile par défaut des nouvelles apps** : tout en TypeScript (TanStack Start, cohérent avec
-   Better Auth), ou TypeScript pour l'interface et FastAPI pour le serveur (comme Pono et KYA) ?
+1. ~~La pile par défaut~~ : **tranché, tout en TypeScript (D-016)**.
 2. **La facturation** : centralisée dans le Compte Kete (proposition) ou propre à chaque app ?
 3. **Les dépôts** : `kete-core` et `kete-cockpit` séparés, comme proposé ?
 4. **Les domaines** des services et des apps.

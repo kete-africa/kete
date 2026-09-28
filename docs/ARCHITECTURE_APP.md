@@ -1,7 +1,7 @@
 # L'architecture d'une app Kete
 
-> **Statut : proposition**, en attente du choix de pile (`ARCHITECTURE.md`, question 1). Les
-> couches et les règles valent quelle que soit la pile ; les exemples sont en TypeScript.
+> **Statut : proposition.** Pile tranchée : tout en TypeScript (D-016). Découpage par features et
+> écrans conçus pour chaque métier (D-015). Règles de conception : `CONCEPTION.md`.
 
 ## 1. La forme : un monolithe modulaire
 
@@ -33,27 +33,41 @@ passe par les mêmes règles que depuis l'écran.
 
 ```
 nettio/
-  CLAUDE.md                 contexte + renvoi à la doctrine kete
-  kete.json                 le manifeste (contrat manifest.v1)
-  src/
-    modules/
-      deposits/
-        domain/             entités, règles, événements de domaine
-        application/        cas d'usage, politiques d'accès
-        infrastructure/     accès aux données
-        capabilities.ts     les gestes exposés par MCP, avec leur niveau d'autonomie
-      clients/  workshop/  cashier/  agencies/
-    platform/               le câblage : auth, outbox, brouillons, audit, adaptateurs
-    routes/                 l'interface web (fine : elle appelle les cas d'usage)
-    surfaces/
-      api/                  API REST /api/v1
-      mcp/                  généré depuis les capabilities
-      admin/                espace opérateur (@kete/admin)
-      webhooks/
-    worker/                 envoi de l'outbox, rappels, résumés quotidiens
-  db/migrations/            chaque table créée avec sa politique RLS
-  messages/                 fr, en : aucune chaîne en dur
-  tests/                    domaine, cas d'usage, RLS, contrats, bout en bout, évals IA
+├── CLAUDE.md                     contexte + renvoi à la doctrine kete
+├── kete.json                     le manifeste (contrat manifest.v1)
+├── package.json · tsconfig.json · vite.config.ts · drizzle.config.ts
+├── docs/
+│   ├── ARCHITECTURE.md           vue d'ensemble + schéma (Mermaid)
+│   ├── decisions/                0001-titre.md, une décision par fichier
+│   ├── flows/                    paiement, brouillon validé, hors ligne (séquences)
+│   └── generated/                base, capacités, événements, API : générés, ne pas éditer
+├── src/
+│   ├── features/                 ← une feature = un dossier
+│   │   ├── deposits/
+│   │   │   ├── README.md         rôle, cycle de vie (schéma), commandes, capacités
+│   │   │   ├── deposit.record.ts le schéma unique (Zod)
+│   │   │   ├── domain/           règles : prix, acompte, transitions
+│   │   │   ├── commands/         create-deposit.ts · mark-ready.ts · cancel-deposit.ts
+│   │   │   ├── queries/          deposits-of-the-day.ts
+│   │   │   ├── policies.ts       qui a le droit de faire quoi
+│   │   │   ├── infrastructure/   deposit.table.ts (Drizzle) · deposit.repository.ts
+│   │   │   ├── ui/               DepositForm.tsx · DepositCard.tsx · DepositList.tsx
+│   │   │   ├── capabilities.ts   gestes exposés à l'agent, avec leur autonomie
+│   │   │   ├── events.ts         ce que la feature annonce
+│   │   │   ├── index.ts          sa seule porte d'entrée publique
+│   │   │   └── __tests__/
+│   │   ├── customers/  workshop/  cashier/  agencies/  pricing/
+│   ├── routes/                   pages TanStack Start, fines (URL en français : /depots)
+│   │   ├── __root.tsx
+│   │   ├── _app/depots/index.tsx · _app/depots/$id.tsx
+│   │   └── verification/$draftId.tsx
+│   ├── server/                   api/ (REST /api/v1) · mcp/ · admin/ · webhooks/
+│   ├── worker/                   outbox, rappels, résumé quotidien (pg-boss)
+│   ├── platform/                 câblage : auth, base, adaptateurs, outbox, brouillons, i18n
+│   └── shared/                   argent, identifiants, dates
+├── db/migrations/                chaque table créée avec sa politique RLS
+├── messages/                     fr.json, en.json : aucune chaîne en dur
+└── tests/                        rls/ · e2e/ · evals/
 ```
 
 ## 4. Ce que le châssis fournit, ce que l'app écrit
