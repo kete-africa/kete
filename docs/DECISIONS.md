@@ -130,3 +130,16 @@ traitements lourds branchés par les contrats.
 **Tranché le 2026-09-28** par l'auteur (« Il faut la gestion de la docs avec des schémas au fur et à
 mesure »). Règles dans `CONCEPTION.md`, partie E : Markdown et Mermaid à côté du code, mis à jour
 dans la même pull request, une partie générée depuis le code et vérifiée en CI.
+
+## D-018 — Un seul flux de travail pour tous les dépôts
+
+**Tranché le 2026-09-28** par l'auteur (« on utilise toujours Spec Kit… avec Neon, on peut avoir des
+branches… GitHub main, dev, feature »). Règles dans `FLUX.md` : `main` / `dev` / `NNN-slug` alignées
+sur les branches Neon et les environnements Coolify ; Spec Kit pour chaque feature ; CI verte avant
+toute fusion dans `dev` ; `main` par le geste humain seul, après les garde-fous de Pono.
+
+## D-019 — Facturation centralisée et dépôts `kete-core` et `kete-cockpit`
+
+**Tranché le 2026-09-28** par l'auteur (« go »). La facturation des apps Kete vit dans le Compte
+Kete. `kete-core` porte les contrats, les paquets partagés, le Compte Kete, Mon espace Kete et le
+châssis ; `kete-cockpit` est une app qui consomme `kete-core` comme les autres.

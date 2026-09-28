@@ -19,6 +19,7 @@ décisions et sa feuille de route. Le code des produits vit dans leurs propres d
 | `docs/ARCHITECTURE.md` | Les guichets, les contrats, les dépôts, l'infrastructure |
 | `docs/ARCHITECTURE_APP.md` | L'architecture interne d'une app Kete |
 | `docs/CONCEPTION.md` | Les règles de conception et de documentation des apps |
+| `docs/FLUX.md` | Le flux de travail : branches, Neon, Spec Kit, CI, mise en production |
 | `docs/DECISIONS.md` | Ce qui est tranché, et pourquoi |
 | `docs/VERITE_ET_PREUVES.md` | Le registre de ce qu'on peut affirmer |
 | `docs/FEUILLE_DE_ROUTE.md` | Les étapes et leurs preuves de fin |
