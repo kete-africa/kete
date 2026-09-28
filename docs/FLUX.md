@@ -66,10 +66,10 @@ Une pull request n'est fusionnée dans `dev` que si **toute** la CI est verte.
 
 ## 6. Les conventions
 
-- **Langues (D-020)** : le code et **toute la documentation technique** (README, `docs/` des dépôts
-  de code, specs Spec Kit, schémas, décisions techniques) sont **en anglais**. La doctrine du dépôt
-  `kete` reste en français. Les écrans sont en français, et en anglais par les traductions.
+- **Code en anglais**, documentation en français, écrans en français (et en anglais par les
+  traductions).
 - **Messages de commit** en anglais, à l'impératif, courts ; le corps explique le pourquoi.
 - **Secrets** : jamais dans le dépôt ; `.env.example` documente chaque variable ; les valeurs vivent
   dans Coolify, puis Infisical.
-- **Chaque dépôt** a son `CLAUDE.md`, qui renvoie à la doctrine du dépôt `kete`.
+- **Chaque dépôt** a son `CLAUDE.md`, qui renvoie à la doctrine du dépôt `kete`, et sa **feuille de
+  route par phases**, `docs/ROADMAP.md` (D-021), tenue à jour à chaque phase fermée.

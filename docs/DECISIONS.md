@@ -152,3 +152,10 @@ châssis ; `kete-cockpit` est une app qui consomme `kete-core` comme les autres.
 `docs/`, specs Spec Kit, schémas, décisions techniques, `CLAUDE.md`) sont en anglais. La doctrine
 du dépôt `kete`, déjà rédigée, reste en français. Les écrans sont en français, et en anglais par
 les traductions.
+
+## D-021 — Chaque dépôt a sa feuille de route par phases
+
+**Tranché le 2026-09-28** par l'auteur (« Dans chaque projet, il faut écrire le fichier roadmap des
+phases »). Chaque dépôt de code porte `docs/ROADMAP.md` (en anglais, D-020) : phases contiguës,
+chacune avec son objectif, son périmètre, ses dépendances et sa **preuve de fin**, sur le modèle de
+Pono. La doctrine garde sa `FEUILLE_DE_ROUTE.md`, qui ordonne les dépôts entre eux.
