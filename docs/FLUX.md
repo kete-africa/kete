@@ -66,8 +66,9 @@ Une pull request n'est fusionnée dans `dev` que si **toute** la CI est verte.
 
 ## 6. Les conventions
 
-- **Code en anglais**, documentation en français, écrans en français (et en anglais par les
-  traductions).
+- **Langues (D-020)** : le code et **toute la documentation technique** (README, `docs/` des dépôts
+  de code, specs Spec Kit, schémas, décisions techniques) sont **en anglais**. La doctrine du dépôt
+  `kete` reste en français. Les écrans sont en français, et en anglais par les traductions.
 - **Messages de commit** en anglais, à l'impératif, courts ; le corps explique le pourquoi.
 - **Secrets** : jamais dans le dépôt ; `.env.example` documente chaque variable ; les valeurs vivent
   dans Coolify, puis Infisical.

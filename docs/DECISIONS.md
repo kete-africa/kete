@@ -143,3 +143,12 @@ toute fusion dans `dev` ; `main` par le geste humain seul, après les garde-fous
 **Tranché le 2026-09-28** par l'auteur (« go »). La facturation des apps Kete vit dans le Compte
 Kete. `kete-core` porte les contrats, les paquets partagés, le Compte Kete, Mon espace Kete et le
 châssis ; `kete-cockpit` est une app qui consomme `kete-core` comme les autres.
+
+## D-020 — La documentation technique est en anglais
+
+**Tranché le 2026-09-28** par l'auteur (« La documentation technique sera toujours en anglais »).
+
+**Tranché ainsi.** Le code et toute la documentation technique des dépôts de code (README,
+`docs/`, specs Spec Kit, schémas, décisions techniques, `CLAUDE.md`) sont en anglais. La doctrine
+du dépôt `kete`, déjà rédigée, reste en français. Les écrans sont en français, et en anglais par
+les traductions.

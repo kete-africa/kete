@@ -57,7 +57,8 @@
 
 La documentation vit **dans le dépôt, à côté du code**, et se met à jour **dans la même pull request
 que le code**. Les schémas sont écrits en **Mermaid** dans le Markdown : GitHub les affiche, et un
-agent peut les modifier comme du texte.
+agent peut les modifier comme du texte. **La documentation technique est toujours en anglais**
+(D-020) ; seule la doctrine du dépôt `kete` est en français.
 
 | Où | Contenu | Schéma |
 |---|---|---|
