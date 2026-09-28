@@ -94,7 +94,7 @@ L'accès d'un opérateur Kete au compte d'un client est limité dans le temps, m
 5. L'abonnement de l'organisation devient actif ; le prochain jeton porte l'accès à l'app.
 6. Un événement `payment.succeeded` part vers Kete Cockpit par l'outbox.
 
-**Proposition** : la facturation des apps Kete est **centralisée dans le Compte Kete** (un client,
+**Tranché (D-016)** : la facturation des apps Kete est **centralisée dans le Compte Kete** (un client,
 un compte, une facture, et des offres groupées possibles). Les apps lisent l'accès dans le jeton et
 gardent un délai de grâce si le Compte Kete est momentanément injoignable.
 
@@ -146,7 +146,7 @@ retour, design system.
 - **Domaines** (proposition) : `kete.africa` (site), `compte.kete.africa`,
   `cockpit.kete.africa`, et un sous-domaine ou un domaine propre par app.
 
-## 12. Les dépôts (proposition)
+## 12. Les dépôts (D-017)
 
 | Dépôt | Contenu |
 |---|---|
@@ -158,8 +158,7 @@ retour, design system.
 
 ## 13. Questions ouvertes
 
-1. **La pile par défaut des nouvelles apps** : tout en TypeScript (TanStack Start, cohérent avec
-   Better Auth), ou TypeScript pour l'interface et FastAPI pour le serveur (comme Pono et KYA) ?
-2. **La facturation** : centralisée dans le Compte Kete (proposition) ou propre à chaque app ?
-3. **Les dépôts** : `kete-core` et `kete-cockpit` séparés, comme proposé ?
-4. **Les domaines** des services et des apps.
+1. **Les domaines** des services et des apps.
+2. **Chariow** : abonnements récurrents, signature des webhooks, frais et reversement.
+
+Pile par défaut : TypeScript (D-015).
