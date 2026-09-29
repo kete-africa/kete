@@ -173,3 +173,32 @@ son propre dépôt, s'il devient un produit ouvert à d'autres porteurs.
 **Pourquoi.** Publier les paquets (compilation, versions, noms `@kete-africa/*`, jetons de lecture)
 ne sert encore personne ; le Cockpit s'appuie sur les contrats, le Compte Kete et le système visuel
 de `kete-core`, qui évoluent ensemble dans la même CI. « On ne construit que ce qui a déjà fait mal. »
+
+## D-023 — Firmo est refondu en TypeScript, dans un nouveau dépôt `kete-africa/firmo`
+
+**Tranché le 2026-09-29** par l'auteur (« Réécrire en TypeScript », « Nouveau dépôt vierge »).
+Précise `ARCHITECTURE_APP.md` §10 pour Firmo.
+
+**Tranché ainsi.** Firmo n'a pas encore d'utilisateur réel : on le réécrit sur l'architecture d'une
+app Kete (D-015, D-016), avec sa base Neon et Neon Storage, dans un dépôt neuf
+`kete-africa/firmo`. L'ancien dépôt (Python, Supabase) reste chez l'auteur comme référence : ses
+tests, ses cas PDF et ses jeux d'évaluation servent d'oracle, et aucune règle métier écrite
+(`decisions.md`, `model.md`) n'est perdue. Les offres, abonnements et paiements passent au Compte
+Kete et au Cockpit (D-019) ; Firmo garde ses gestes métier. Les paquets `@kete/*` sont publiés
+dans un registre privé (condition posée par D-022).
+
+## D-024 — Le Compte Kete par numéro, créé en silence depuis la messagerie
+
+**Tranché le 2026-09-29** par l'auteur (« c'est l'option 1 qui est la bonne »). Réalise
+« Commerçants : Compte Kete par téléphone » (D-009) et le « téléphone plus tard » de D-011.
+
+**Tranché ainsi.** L'usager d'une app de messagerie (Firmo d'abord) a un Compte Kete qu'il n'a
+jamais eu à créer : son numéro, prouvé par la messagerie (l'expéditeur WhatsApp, le contact partagé
+sur Telegram), devient une personne du Compte Kete, et son activité une organisation. Aucun
+e-mail, aucun mot de passe, aucun formulaire. Le lien envoyé dans la conversation est une connexion
+à usage unique et de courte durée au Compte Kete, qui ouvre l'app par la connexion unique. Le même
+numéro ouvre les autres apps Kete ; l'e-mail et le mot de passe restent facultatifs, ajoutés depuis
+Mon espace Kete.
+
+**Pourquoi.** L'usage est informel : la valeur vient avant toute configuration, et une inscription
+au premier message la détruirait. Un seul compte garde l'auth unique et la facturation centralisée.
