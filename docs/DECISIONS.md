@@ -159,3 +159,17 @@ les traductions.
 phases »). Chaque dépôt de code porte `docs/ROADMAP.md` (en anglais, D-020) : phases contiguës,
 chacune avec son objectif, son périmètre, ses dépendances et sa **preuve de fin**, sur le modèle de
 Pono. La doctrine garde sa `FEUILLE_DE_ROUTE.md`, qui ordonne les dépôts entre eux.
+
+## D-022 — Kete Cockpit vit dans `kete-core` tant que les paquets ne sont pas publiés
+
+**Tranché le 2026-09-29** par l'auteur (« Je suis d'accord »). Amende D-019.
+
+**Tranché ainsi.** Kete Cockpit se construit dans `kete-core`, comme une app à part
+(`apps/cockpit`) : son propre déploiement, sa propre base, sa propre connexion par le Compte Kete,
+comme n'importe quelle app Kete. Les paquets `@kete/*` seront publiés dans un registre privé le jour
+où une app d'un autre dépôt (Nettio, Firmo) se branchera ; le Cockpit pourra alors s'extraire dans
+son propre dépôt, s'il devient un produit ouvert à d'autres porteurs.
+
+**Pourquoi.** Publier les paquets (compilation, versions, noms `@kete-africa/*`, jetons de lecture)
+ne sert encore personne ; le Cockpit s'appuie sur les contrats, le Compte Kete et le système visuel
+de `kete-core`, qui évoluent ensemble dans la même CI. « On ne construit que ce qui a déjà fait mal. »
