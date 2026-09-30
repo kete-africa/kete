@@ -36,9 +36,10 @@ Signature : **« Outils de demain pour une meilleure productivité »**.
 | Dépôt | Rôle |
 |---|---|
 | `kete-africa/kete` | Ce dépôt : la doctrine |
-| `kete-cockpit` | La plateforme d'administration des produits, avec les contrats et les SDK |
+| `kete-core` | L'atelier : contrats, SDK et briques `@kete/*`, Compte Kete, Mon espace Kete, modèle d'app (D-028, D-030) |
+| `kete-cockpit` | Kete Cockpit et sa flotte ; vit dans `kete-core` jusqu'à sa sortie (D-022, D-027, D-033) |
+| `kete-enterprise` | Kete Enterprise, la chaîne d'une entreprise (D-025, D-028) |
 | `firmo`, `nettio`, `nyatefe` | Les apps du quotidien |
 | `pono` | Le chemin sûr des changements de code, produit « par Kete » |
-| `kete-enterprise` | Le socle générique, plus tard |
 
 Chaque dépôt produit renvoie ici pour la doctrine, dans son propre `CLAUDE.md`.

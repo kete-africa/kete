@@ -202,3 +202,219 @@ Mon espace Kete.
 
 **Pourquoi.** L'usage est informel : la valeur vient avant toute configuration, et une inscription
 au premier message la détruirait. Un seul compte garde l'auth unique et la facturation centralisée.
+
+## D-025 — Kete Enterprise avance dès maintenant, KYA en est le premier client autonome
+
+**Tranché le 2026-09-30** par l'auteur (« je valide », après le choix entre un fork et une instance
+autonome). Amende la règle 1 de `FEUILLE_DE_ROUTE.md` et précise D-016 pour « le socle KYA ».
+Réflexion : `journal/2026-09-30-kete-enterprise-la-chaine.md`.
+
+**Tranché ainsi.**
+- Le socle se construit chez Kete, dans le dépôt `kete-africa/kete-enterprise`, **en parallèle** des
+  Kete Apps.
+- **KYA-Platform est une instance autonome de `kete-enterprise`** : sur les serveurs de KYA, aux
+  couleurs de KYA, administrée par KYA. Le socle de KYA suit donc D-016 (TypeScript) ; l'ancien
+  kya-platform (Python) reste une référence.
+- **Jamais de fork.** KYA reçoit les versions (images et migrations). Ce qui est propre à KYA est de
+  la configuration ou des apps connectées, dans des dépôts qui appartiennent à KYA.
+- Entre Kete et KYA, le lien se limite à la **licence** et au **canal de versions**.
+- La condition de l'étape 4 demeure : **la propriété est clarifiée par écrit avec KYA**, avant la
+  mise en production chez KYA.
+
+**Pourquoi.** Un fork diverge en quelques semaines et ne règle pas la propriété ; il la reporte.
+Une instance autonome donne à KYA son autonomie et fait d'elle la preuve vivante de la
+réversibilité promise à tous les clients (`MANDAT.md`, limite 1).
+
+**Ce que ça coûte.** Kete Enterprise avance avant la preuve de l'étape 2 : le risque de dispersion
+(`POSITIONNEMENT.md`, risque 2) est à surveiller. Tout ce que fait la console de Kete doit aussi
+pouvoir être fait seul par l'administrateur d'une instance autonome : installer, mettre à jour,
+revenir en arrière, sauvegarder, restaurer.
+
+## D-026 — Une instance partagée pour les entreprises avec Kete ; les entreprises à part ont la leur
+
+**Tranché le 2026-09-30** par l'auteur (« Une instance partagée pour les entreprises qui sont avec
+moi, d'où la gestion des tenants » ; « des entreprises sur Kete avec leurs serveurs pour certaines
+ressources clés, et les entreprises à part comme KYA »). Remplace « une instance par entreprise,
+jamais partagée » (`OFFRES.md`).
+
+**Tranché ainsi.** Un seul logiciel, `kete-enterprise`, plusieurs façons de le faire tourner :
+
+| Cas | Où tourne l'instance | Qui l'administre |
+|---|---|---|
+| **Entreprise avec Kete** | L'instance partagée de Kete ; l'entreprise y est un **tenant**, isolé par la RLS | Kete |
+| **Avec des ressources clés chez elle** | L'instance partagée ; ses fichiers, son ERP, ses apps, ses MCP ou son modèle d'IA restent sur ses serveurs et y sont reliés | Kete |
+| **Entreprise à part** (KYA) | Sa propre instance, sur ses serveurs (D-025) | L'entreprise |
+
+**Pourquoi.** Une instance par PME coûte trop cher à faire tourner, et le code isole déjà les
+organisations par la RLS (constitution de `kete-core`, principe V).
+
+**Ce que ça coûte.** L'isolation entre tenants devient la garantie la plus critique : testée en CI à
+chaque changement, jamais contournée. Un tenant doit pouvoir être **exporté entier** pour partir ou
+passer sur sa propre instance (`MANDAT.md`, limite 1).
+
+## D-027 — La console de flotte de Kete Enterprise vit dans Kete Cockpit
+
+**Tranché le 2026-09-30** par l'auteur (« Je valide »).
+
+**Tranché ainsi.** Un module **Flotte** du Cockpit, réservé aux opérateurs Kete, gère les tenants
+de l'instance partagée et les instances opérées par Kete : création, versions déployées par vagues
+(Kete d'abord), santé, sauvegardes vérifiées, accès du support limité dans le temps, motivé, tracé
+et visible par le client. **La console ne lit jamais les données métier d'un client** : des faits
+et des compteurs. Le cœur du Cockpit reste l'outil générique des porteurs de produits. Une instance
+autonome ne dépend pas du Cockpit ; l'envoi de sa santé et de faits y est facultatif et consenti.
+
+**Pourquoi.** Le Cockpit a déjà le registre, la santé et les événements, et prévoit le
+provisioning (`ARCHITECTURE.md` §9). Pour lui, une instance ou un tenant est un produit de plus ;
+la flotte n'ajoute que des gestes. Pas de nouvelle app à faire vivre.
+
+## D-028 — La frontière entre `kete-core` et `kete-enterprise`
+
+**Tranché le 2026-09-30** par l'auteur (« D'accord »). Précise D-019.
+
+**Tranché ainsi.** Le métier à tisser n'est pas le tissu (`VISION.md`).
+
+- **`kete-core` est l'atelier de Kete** : ce qui permet de construire, vendre et faire tourner les
+  produits. Les contrats ; les paquets `@kete/*` (dont, en phase 4, `records`, `commands`, `drafts`,
+  `capabilities`, puis `ai`) ; le Compte Kete et Mon espace Kete ; Kete Cockpit et sa flotte (D-022,
+  D-027) ; le modèle d'app. **Rien de ce qu'il contient n'est remis à un client.**
+- **`kete-enterprise` est un produit : la chaîne d'une entreprise.** Ce qui existe *entre* ses
+  outils : sa structure (unités, postes, affectations datées, délégations), ses droits avec portée,
+  ses décisions (circuits d'approbation, Inbox), le registre de ses ressources (skills, apps, MCP,
+  agents) avec soumission et promotion par paliers, son guichet MCP, ses agents avec fiche de poste,
+  son IA interne, ses modules métier (finance et RH opérationnelles), le relais vers ses ressources,
+  et l'API et le SDK de ses apps connectées. **C'est lui qui est remis au client, sous licence.**
+- **Sens unique.** `kete-enterprise` dépend de `kete-core`, jamais l'inverse. Les Kete Apps ne
+  dépendent pas de `kete-enterprise` : elles s'y **branchent** quand l'entreprise grandit, et
+  changent de gamme sans changer d'outil.
+- **Identité.** Sur l'instance partagée, le Compte Kete est l'identité, et l'organisation du Compte
+  Kete est le tenant. Une instance autonome a sa propre identité (celle du socle, D-011). Le Compte
+  Kete sait qui est la personne et dans quelle entreprise ; `kete-enterprise` sait où elle se trouve
+  dans cette entreprise et ce qu'elle peut y faire.
+- **Les mots.** L'*organisation* est l'entreprise cliente, la frontière RLS, partout dans Kete. La
+  structure interne d'une entreprise se dit en *unités*.
+- **Trois questions pour placer une brique.** Une Kete App en aurait-elle besoin ? Paquet de
+  `kete-core`. Sert-elle à Kete pour vendre ou opérer ? Service de `kete-core`. N'a-t-elle de sens
+  qu'avec des unités, des circuits et des ressources d'entreprise ? `kete-enterprise`.
+
+**Pourquoi.** Les deux n'ont ni le même public (ceux qui construisent les produits, ou les employés
+d'une entreprise), ni le même nombre d'exemplaires (un seul atelier, N instances), ni le même cycle
+de vie (des bibliothèques, ou un produit installé chez des clients), ni les mêmes données (celles de
+Kete, ou les plus sensibles d'une entreprise), ni la même licence (rien n'est remis, ou le produit
+est remis).
+
+**Ce que `kete-enterprise` ne devient jamais** : un ERP (il fait le travail, il intègre les livres),
+un chat générique, une part de la machine commerciale de Kete, un logiciel qui a besoin de Kete pour
+tourner, un lieu pour le code propre à un client.
+
+## D-029 — Les choix techniques de Kete Enterprise
+
+**Tranché le 2026-09-30** par l'auteur (« Je valide l'API Hono, les instances dédiées hébergées par
+Kete, la gestion à distance, le relais, le modèle du chat »). Complète D-026.
+
+**Tranché ainsi.**
+- **Une API séparée en Hono**, sur Node LTS, que consomment le web, le MCP, les agents et les apps
+  connectées ; les écrans en TanStack Start ; un worker pg-boss ; Drizzle et Postgres. Pas de Bun
+  tant que tout l'écosystème ne migre pas ensemble.
+- **Chez n'importe quel client** : `kete-enterprise` tourne sur tout Postgres 16 ou plus (avec
+  pgvector) et tout stockage compatible S3, s'installe par Docker Compose ou un modèle Coolify, et
+  n'appelle jamais Kete pour fonctionner.
+- **Deux façons de plus de le faire tourner** : une instance dédiée hébergée par Kete ; une instance
+  chez le client, administrée à distance par Kete.
+- **Le relais** : un petit service chez le client, qui ouvre lui-même la connexion vers l'instance
+  (aucun port entrant) et garde chez lui les secrets de ses ressources. La base de données reste
+  toujours avec l'instance.
+- **Le modèle du chat interne** passe par un port compatible OpenAI, DeepSeek d'abord ; le
+  fournisseur se choisit selon la sensibilité des données (l'API de DeepSeek les traite en Chine).
+
+## D-030 — Les briques communes vivent dans `kete-core`
+
+**Tranché le 2026-09-30** par l'auteur (« On abstrait tout ce qu'on a déjà identifié » ; « Oui, tout
+me va »). Précise D-028.
+
+**Tranché ainsi.**
+- **Les SDK servent à se brancher** sur un contrat ou un service : `@kete/sdk` (le protocole
+  d'intégration, et lui seul : jamais un fourre-tout), `@kete/auth` (le Compte Kete), puis
+  `@kete/enterprise-sdk`, publié par `kete-enterprise`, et un SDK Python quand une app Python en
+  aura besoin.
+- **Les briques servent à construire** une app selon les règles de Kete : `tenancy`, `commands`,
+  `records`, `drafts`, `capabilities`, `ai`, `notify`, `identity` (extrait du Compte Kete), `files`,
+  `payments`, `admin`, `feedback`, `design`, `testing`.
+- **L'outillage sert à démarrer** : le modèle d'app et sa commande de création, les configurations,
+  les vérifications.
+- **Aucun paquet ne dépend d'un framework serveur** (ni Hono, ni TanStack) : des fonctions et des
+  handlers `Request → Response`, qui se branchent tels quels partout ; la CI le vérifie. Le Compte
+  Kete, le Cockpit et les Kete Apps restent sur TanStack Start ; seule l'API de `kete-enterprise`
+  est en Hono (D-029).
+- **La méthode** : une app garde sa propre gestion tant qu'elle ne se répète pas ; ce qui se répète
+  est abstrait dans `kete-core`.
+
+## D-031 — MailKite est le premier adaptateur d'e-mail
+
+**Tranché le 2026-09-30** par l'auteur (« On commence ce fournisseur »).
+
+**Tranché ainsi.** MailKite (envoi par API, réception en webhooks signés, boîte de réception pour
+agents par MCP) est le premier adaptateur du port de messages de `@kete/notify` (D-014).
+
+**Ce que ça coûte.** MailKite est en bêta, porté par une petite société américaine (SendHub LLC),
+sur Amazon SES. Le port garde un changement de fournisseur à une ligne de configuration. Une clé par
+service, limitée à son domaine ; la clé de compte, sans restriction, ne sert qu'à l'administration.
+Les options sans conservation ou chiffrées sont activées, et l'accord de traitement des données est
+vérifié avant l'usage pour un client.
+
+## D-032 — La documentation s'écrit dans des formats reconnus
+
+**Tranché le 2026-09-30** par l'auteur (« Au fur et à mesure, on doit documenter dans un format
+reconnu afin que je puisse lancer la doc rapidement »). Précise D-017.
+
+**Tranché ainsi.** Chaque dépôt publie un site **Starlight**, organisé selon **Diátaxis** (tutoriels,
+guides, référence, explications). Les API REST en **OpenAPI 3.1**, générées depuis Zod ; les
+événements en **AsyncAPI** ; les contrats en **JSON Schema** ; l'API des paquets par **TypeDoc** ; les
+décisions techniques au format **MADR** ; les schémas en **Mermaid** (dont C4) ; les versions et
+leurs journaux par **Changesets**. Un même gabarit pour tous les dépôts ; la CI refuse une doc
+générée qui ne correspond plus au code.
+
+## D-033 — Kete Cockpit sort dans son propre dépôt
+
+**Tranché le 2026-09-30** par l'auteur (« Il faudrait par ailleurs, après, avoir le repo du
+Cockpit »). Amende D-022.
+
+**Tranché ainsi.** Une fois `kete-core` consolidé, le Cockpit sort dans `kete-africa/kete-cockpit`,
+avec son historique ; il consomme les paquets publiés, garde son projet Neon, sa CI et sa doc.
+`kete-core` ne garde que l'atelier : contrats, paquets, Compte Kete et Mon espace Kete, modèle d'app.
+
+**Pourquoi.** La condition de D-022 est remplie (les paquets sont publiés), et un dépôt par
+propriétaire rend le travail en parallèle sûr (D-034).
+
+## D-034 — Les couloirs de travail et leurs propriétaires
+
+**Tranché le 2026-09-30** par l'auteur (« Il faut qu'on fasse tout ce qu'on perçoit pour core, et
+derrière je pourrai lancer les apps et enterprise en parallèle »).
+
+**Tranché ainsi.**
+- **D'abord, `kete-core` est consolidé seul**, puis trois couloirs avancent en parallèle :
+  l'**atelier** (`kete-core`), les **apps** (Firmo, puis les autres, et `kete-cockpit`) et
+  **Enterprise** (`kete-enterprise`).
+- **Un propriétaire par dépôt**, un dossier de travail par instance d'agent (un `git worktree` si
+  deux instances partagent un dépôt).
+- **Les paquets se consomment en versions publiées**, jamais par la branche d'un autre couloir ; un
+  besoin qui traverse deux couloirs passe par une issue.
+- **L'auteur est seul à fusionner.**
+
+## D-035 — Deux designs, plus la marque de chaque client
+
+**Tranché le 2026-09-30** par l'auteur (« Puis-je avoir plusieurs designs ? J'aimerais copilot-demo
+pour les entreprises » ; « tout me va »). Précise D-010.
+
+**Tranché ainsi.**
+- **`kete`**, la v1 rectangle (D-010), reste le style de Kete : son site, le Compte Kete, Mon espace
+  Kete et les Kete Apps.
+- **`workspace`** est le design de `kete-enterprise`. Il reprend l'organisation de la démo
+  `copilot-demo` : assistants et conversations, bibliothèque, « enseigner » (soumettre un
+  savoir-faire), agents, applications par catégorie. Il n'en reprend que les principes : **aucun
+  élément de marque d'un tiers**, ni nom, ni icônes, ni police sous licence ; une police libre. Modes
+  clair et sombre.
+- **`@kete/design` porte trois couches** : jetons de base, jetons sémantiques, composants (qui
+  n'utilisent que les jetons sémantiques). Un `DESIGN.md` par design, vérifié en CI.
+- **La marque de chaque client** (logo, palette) s'applique au design `workspace` par les jetons
+  sémantiques ; une palette qui ne respecte pas les contrastes est refusée.
+- **Le design du Cockpit** reste à trancher.

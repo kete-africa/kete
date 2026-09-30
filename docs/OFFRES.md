@@ -33,10 +33,14 @@ Un regard extérieur sur l'activité, avant de dépenser un franc.
 
 ## Kete Enterprise — structurer
 
-La plateforme qui fait tourner tout le système numérique d'une entreprise.
+La plateforme qui fait tourner tout le système numérique d'une entreprise : sa chaîne, ce qui
+existe entre ses outils (D-028).
 
-- **Le socle** : identité, droits, registre, santé, audit, guichet MCP gouverné. Une instance par
-  entreprise, jamais partagée.
+- **Le socle** : structure de l'entreprise, droits selon la place de chacun, circuits de décision
+  et Inbox, registre des ressources, guichet MCP gouverné, santé, audit.
+- **Deux façons d'en profiter** (D-026) : sur l'instance partagée de Kete, où l'entreprise est un
+  tenant, avec ses ressources clés sur ses serveurs si elle le veut ; ou à part, avec sa propre
+  instance, qu'elle administre elle-même (D-025). Jamais de fork.
 - **Le catalogue de capacités** : skills, MCP et apps, plus les outils open source validés, devenus
   implicites derrière les capacités.
 - **Les agents avec une fiche de poste.**
