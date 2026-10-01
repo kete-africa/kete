@@ -5,7 +5,9 @@
 
 ## Règles
 
-1. **Kete Apps et Kete Consulting rapportent d'abord** ; Kete Enterprise suit, avec un pilote prouvé.
+1. **Kete Apps et Kete Consulting rapportent d'abord.** Kete Enterprise avance en parallèle depuis
+   le 2026-09-30, avec KYA comme premier client autonome (D-025) ; son offre ne se vend qu'après la
+   preuve de l'étape 4.
 2. **Un métier à la fois** dans Kete Apps.
 3. **La doctrine avant le code** : chaque produit renvoie à ce dépôt.
 4. **On ne construit que ce qui a déjà fait mal.**
@@ -46,10 +48,14 @@ panne simulée déclenche une alerte ; l'agent répond sur l'état des apps.
 
 **Preuve** : un diagnostic livré, compris sans explication, et une décision prise grâce à lui.
 
-## Étape 4 — Kete Enterprise
+## Étape 4 — Kete Enterprise · _commencée le 2026-09-30 (D-025)_
 
-- [ ] Propriété de KYA-Platform clarifiée par écrit.
-- [ ] Socle générique extrait ; KYA comme pilote.
+- [ ] Propriété de KYA-Platform clarifiée par écrit, avant la mise en production chez KYA.
+- [ ] Dépôt `kete-africa/kete-enterprise` : la chaîne d'une entreprise (D-028), avec sa propre
+      feuille de route par phases (D-021).
+- [ ] KYA-Platform : une instance autonome sur les serveurs de KYA, sa configuration et ses apps
+      dans les dépôts de KYA, jamais un fork (D-025).
+- [ ] L'instance partagée et ses tenants, administrés par la flotte du Cockpit (D-026, D-027).
 - [ ] Catalogue de capacités et d'outils open source validés.
 
 **Preuve** : des gains mesurés chez le pilote, publiés avec leur preuve.
