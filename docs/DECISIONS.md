@@ -418,3 +418,55 @@ pour les entreprises » ; « tout me va »). Précise D-010.
 - **La marque de chaque client** (logo, palette) s'applique au design `workspace` par les jetons
   sémantiques ; une palette qui ne respecte pas les contrastes est refusée.
 - **Le design du Cockpit** reste à trancher.
+
+## D-036 — `workspace` reproduit le système de `copilot-demo`
+
+**Tranché le 2026-10-01** par l'auteur (« implémente correctement le design system de
+copilot-demo que je t'ai passé »). Précise D-035.
+
+**Tranché ainsi.**
+- Le design `workspace` reprend le système de la démo **valeur pour valeur** : sombre d'abord
+  (#282828, #242424, traits #494949, texte #DEDEDE et #999), barre latérale de 262 px, éléments de
+  34 px, coins de 5 px, pilules de 24 px, menus et dialogues, Segoe UI à 14 px, le vert de la
+  charte pour guider, l'orange pour le focus. Un mode clair s'y ajoute.
+- **Deux écarts seulement** : le bouton principal prend le vert foncé de la démo (#177969), car le
+  texte blanc sur #1CA18C ne se lit qu'à 3,2:1 ; Segoe UI est nommée mais jamais livrée (son
+  fichier est sous licence), Inter, libre, la remplace ailleurs.
+- Toujours aucun nom, logo ni icône d'application d'un tiers.
+
+## D-037 — Une Kete App est aussi un ensemble de vues que le copilote fait apparaître
+
+**Tranché le 2026-10-01** par l'auteur (« D'accord, merci bcp » ; « implémente toutes les phases
+restantes »), sur la proposition faite à partir de sa discussion sur l'affichage des apps dans un
+copilote.
+
+**Tranché ainsi.**
+- **Le standard est MCP Apps** (extension officielle de MCP, janvier 2026) : une capacité désigne
+  une vue `ui://…`, un document HTML que l'hôte (le copilote de `kete-enterprise`, Claude, ChatGPT)
+  affiche dans la conversation, isolé dans un iframe.
+- **Deux niveaux de vues** : des **vues génériques** fournies par `kete-core` (vérification d'un
+  brouillon, formulaire, tableau, détail), tirées du schéma de l'enregistrement, sans code
+  d'interface ; et des **vues sur mesure** qu'une app fournit quand son métier l'exige (carte,
+  éditeur, tableau de bord).
+- **Le partage** : `kete-core` apprend aux apps à se montrer (contrat, `@kete/capabilities`,
+  `@kete/views`, modèle d'app) ; `kete-enterprise` apprend au copilote à les afficher (l'hôte, la
+  composition, le guichet, la soumission et la promotion des apps).
+- **La décision humaine** : un brouillon de niveau 3 se valide dans la vue, par un outil que seule
+  la vue peut appeler, jamais le modèle. Le niveau 4 (irréversible, argent, externe) renvoie à
+  l'écran de l'app, avec sa confirmation. Le lien vers l'écran reste toujours le recours.
+
+**Pourquoi.** L'app vient à la personne quand elle en a besoin, sans qu'elle ait à l'ouvrir, et la
+même vue sert dans Kete et dans les copilotes du marché.
+
+## D-038 — Une Kete App peut avoir son propre design
+
+**Tranché le 2026-10-01** par l'auteur (« Oui, ajoute »). Précise D-035.
+
+**Tranché ainsi.**
+- Une Kete App prend `kete` par défaut, `workspace` si elle sert une entreprise, ou **son propre
+  design**.
+- Son design suit les mêmes trois couches : son `DESIGN.md` (jetons de base) et sa correspondance
+  sémantique, générés par l'outil de `@kete/design`, avec les mêmes contrôles de contraste en CI.
+  Les composants de `@kete/design` le portent sans changement.
+- Le contrat commun (Compte Kete, isolation par organisation, événements, brouillons, aucune chaîne
+  en dur) ne change pas : le design règle l'apparence, jamais le comportement.
