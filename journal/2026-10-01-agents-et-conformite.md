@@ -39,6 +39,13 @@ Deux petites choses, utiles à toutes les apps : la chaîne de délégation dans
 (`@kete/commands`), et la carte d'identité de l'app dans `manifest.v1` (responsable, catégories de
 données, usage de l'IA, criticité). Tout le reste vit dans `kete-enterprise`.
 
+## Et l'organisation plutôt que l'entreprise (D-041)
+
+Une dernière idée : le même moteur pourrait servir un couple, une famille, une communauté. Le
+modèle l'est déjà (organisation, unités, postes, affectations) ; ce qui manquerait (décisions
+conjointes, mineurs, intimité, installation) attendra un client réel. Le moteur parle
+d'organisations, l'offre parle d'entreprises.
+
 ## Non vérifié
 
 Trois affirmations de la discussion n'ont pas été vérifiées : le nom « Copilot Managed Runtime »,

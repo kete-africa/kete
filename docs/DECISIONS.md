@@ -553,3 +553,29 @@ avant l'audit.
 
 **Ce que ça coûte.** Écrire des contrôles avec ses propres mots et les relier aux clauses demande
 un travail d'expert par référentiel ; c'est ce travail que vend Kete Consulting.
+
+## D-041 — Le moteur parle d'organisations ; l'offre parle d'entreprises
+
+**Tranché le 2026-10-01** par l'auteur (« Ecrire D-041 »), sur l'analyse de sa discussion : « le
+concept d'entreprise peut gérer tout, un couple, une communauté, un groupe, une famille ». Précise
+D-028 et D-039. Réflexion : `journal/2026-10-01-agents-et-conformite.md`.
+
+**Tranché ainsi.**
+- **Les primitives restent génériques.** Une *organisation* (la frontière RLS, partout dans Kete),
+  ses *unités* aux types configurables, ses *postes*, ses *affectations* datées, ses *relations*.
+  Aucune table ne s'appelle « employé », « société » ou « département » : ce sont des types d'unité,
+  d'affectation ou de relation, que chaque organisation nomme.
+- **Une personne appartient à plusieurs organisations** (le Compte Kete le permet déjà), avec des
+  droits distincts dans chacune ; ses agents ne franchissent jamais la frontière d'une organisation
+  (D-039).
+- **L'offre reste celle des entreprises**, d'abord africaines. Aucun produit pour les familles, les
+  couples, les communautés ou les associations n'est construit avant un client réel (principe 7).
+- **Ce que le générique ne couvre pas**, et qui attendra ce client : les décisions conjointes ou à
+  l'unanimité sans hiérarchie, la tutelle des mineurs et leur consentement, l'intimité entre
+  membres d'un même foyer, et un mode d'installation qui ne soit pas une instance par entreprise.
+
+**Pourquoi.** Nommer le moteur par ce qu'il est ne coûte rien et évite de le refaire ; construire
+pour chaque collectif possible referait l'erreur de kya-platform : beaucoup de code, aucun usage.
+
+**Ce que ça coûte.** Des noms un peu plus abstraits dans le modèle de données ; les écrans, eux,
+parlent la langue de chaque organisation.
