@@ -470,3 +470,86 @@ même vue sert dans Kete et dans les copilotes du marché.
   Les composants de `@kete/design` le portent sans changement.
 - Le contrat commun (Compte Kete, isolation par organisation, événements, brouillons, aucune chaîne
   en dur) ne change pas : le design règle l'apparence, jamais le comportement.
+
+## D-039 — Les agents permanents, et ce qu'ils se délèguent
+
+**Tranché le 2026-10-01** par l'auteur (« Ecris et continue avec ce que tu dois faire »), sur
+l'analyse de sa discussion sur des agents qui travaillent pour chaque employé, jour et nuit.
+Précise le principe 4, l'échelle d'autonomie et D-028. Réflexion :
+`journal/2026-10-01-agents-et-conformite.md`.
+
+**Tranché ainsi.**
+- **Trois sortes d'agents, une seule fiche de poste.** Les agents d'une personne ; les agents d'un
+  poste, qui agissent pour qui l'occupe selon ses affectations datées, et changent de droits quand
+  il change ; les agents du système, rattachés à un responsable humain nommé. Tous passent par le
+  registre de `kete-enterprise` (D-028).
+- **Un agent agit dans une seule organisation.** Une personne qui appartient à plusieurs
+  organisations a des agents distincts dans chacune ; aucun ne franchit la frontière RLS de son
+  organisation, ni ne mêle leurs contextes.
+- **Permanent ne veut pas dire en boucle.** Un agent dort, et se réveille sur un événement, une
+  échéance, un message ou une réponse. Ses attentes sont durables : une tâche planifiée, un
+  brouillon en attente de décision. Le worker pg-boss les porte (D-029) ; pas de moteur de
+  workflow à part tant qu'une limite mesurée ne l'exige pas.
+- **La délégation ne fait que rétrécir.** Un agent qui confie une tâche à un autre lui remet une
+  autorisation limitée à cette tâche (ressources, durée, budget), jamais plus que la sienne, qui
+  n'est jamais plus que celle de la personne (principe 4). La chaîne remonte toujours à un humain ;
+  sa profondeur et son budget sont plafonnés.
+- **Chaque geste porte sa chaîne** : l'agent qui agit, la personne pour qui, l'agent qui l'a
+  demandé, une trace commune. Le journal de chaque Kete App la garde (`@kete/commands`).
+- **Un agent ne décide jamais pour un humain.** Un brouillon de niveau 3 ou 4 est validé par une
+  personne, jamais par un autre agent, quelle que soit la chaîne.
+- **Un budget de brouillons.** Chaque agent a un plafond de brouillons ouverts, regroupés dans
+  l'Inbox ; au-delà, il attend. Trop de validations fait cliquer « Valider » sans lire.
+- **Le premier agent permanent est de niveau 1** : la veille des contrôles (D-040). Il lit,
+  vérifie et signale ; il ne change rien.
+
+**Pourquoi.** Des agents qui travaillent en permanence multiplient les gestes faits au nom des
+personnes. Sans chaîne jusqu'à un humain, personne ne sait plus qui a voulu quoi ; sans droits qui
+rétrécissent, une délégation devient une élévation de privilèges ; sans budget de brouillons,
+l'humain ne décide plus, il approuve.
+
+**Ce que ça coûte.** Une autorisation par tâche est plus lourde qu'un jeton partagé, et un agent
+bloqué par son budget attend un humain. C'est voulu.
+
+## D-040 — La gouvernance est dans le contrat ; la conformité est un moteur de contrôles
+
+**Tranché le 2026-10-01** par l'auteur (« Ecris et continue avec ce que tu dois faire »), sur
+l'analyse de sa discussion sur la plateforme gouvernée de Microsoft et l'intégration des normes ISO.
+Précise D-028 et la ligne « les contrôles » de l'architecture de Kete Enterprise.
+
+**Tranché ainsi.**
+- **Gouverner une fois, tourner partout.** La gouvernance d'une app est dans son contrat (son
+  manifeste, ses capacités, ses événements, sa santé) et dans le registre qui la reçoit, jamais
+  dans son hébergement : `kete-enterprise` tourne chez n'importe quel client (D-029). Une app
+  faite avec n'importe quel outil entre dans Kete si elle respecte le contrat ; une app faite avec
+  le modèle d'app le respecte dès sa création.
+- **La carte d'identité d'une app** : `manifest.v1` déclare son responsable, les catégories de
+  données qu'elle traite, son usage de l'IA et sa criticité. Le registre en déduit les contrôles
+  qui s'appliquent ; le Cockpit et le registre en font l'inventaire.
+- **Un seul modèle pour toute conformité** : référentiel → exigence → contrôle → preuve → écart →
+  action corrective → audit. Un référentiel est une norme ISO, une loi, une politique interne, une
+  exigence de client ou un contrat.
+- **Un contrôle sert plusieurs référentiels.** La bibliothèque de contrôles est commune ; chaque
+  référentiel s'y relie. Une sauvegarde testée une fois vaut pour tous ceux qui la demandent.
+- **Tout a une portée** dans la structure de l'entreprise (entité, pays, unité, projet, processus,
+  app) : un référentiel ne s'applique pas uniformément.
+- **Une preuve est un enregistrement** : sa source, sa date, qui l'a collectée, son empreinte, sa
+  durée de validité, son contrôle. Les preuves automatiques viennent des journaux (commandes,
+  décisions sur les brouillons, événements) ; les autres sont des attestations humaines. Une
+  preuve ne vaut que ce que vaut sa source (principe 2).
+- **Les textes des normes ne sont jamais livrés.** Kete livre le moteur et des contrôles rédigés
+  avec ses propres mots, reliés aux numéros de clause ; l'entreprise installe les référentiels pour
+  lesquels elle a les droits. L'édition de chaque norme se vérifie quand son référentiel est écrit.
+- **On montre des contrôles et leurs preuves**, jamais un pourcentage de conformité.
+- **Où ça vit.** Le moteur est dans `kete-enterprise` (D-028). `kete-core` fournit la matière des
+  preuves (journal des commandes, décisions sur les brouillons, événements) et la carte d'identité
+  des apps.
+- **Un référentiel pilote d'abord** : celui qui a une échéance réelle chez KYA, avec quelques
+  contrôles réels, avant tout catalogue.
+
+**Pourquoi.** Huit normes traitées séparément font huit systèmes de conformité, et autant de fois
+la même preuve. Une conformité déduite du contrat et des journaux se construit en travaillant, pas
+avant l'audit.
+
+**Ce que ça coûte.** Écrire des contrôles avec ses propres mots et les relier aux clauses demande
+un travail d'expert par référentiel ; c'est ce travail que vend Kete Consulting.

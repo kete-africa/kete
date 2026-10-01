@@ -179,7 +179,8 @@ sont la trame ; les humains tissent, et décident dans l'Inbox.
 | Décision | Circuits d'approbation décrits en données (approbateur trouvé par relation ou par rôle, seuils, délégation, relance) ; Inbox des humains et des agents |
 | Ressources | Registre des skills, apps, MCP et agents : espaces personnels et d'équipe, soumission sans Git depuis Claude ou ChatGPT, revue selon le risque, promotion par paliers de l'organigramme |
 | Guichet | Une adresse MCP par personne, qui n'expose que ce que sa portée autorise ; chaque appel est autorisé et tracé |
-| IA | Agents avec fiche de poste ; chat interne ; plus tard la connaissance (documents filtrés par les droits) et les contrôles |
+| IA | Agents avec fiche de poste, permanents et réveillés par les événements, dont les délégations ne font que rétrécir (D-039) ; chat interne ; plus tard la connaissance (documents filtrés par les droits) |
+| Conformité | Un moteur de contrôles : référentiels, exigences, contrôles communs, preuves tirées des journaux, écarts, actions correctives, audits ; aucun texte de norme livré (D-040) |
 | Métier | Finance et RH opérationnelles ; les livres (comptabilité, paie) passent par un port |
 | Ouverture | API et SDK pour les apps connectées ; relais vers les ressources gardées chez le client |
 
