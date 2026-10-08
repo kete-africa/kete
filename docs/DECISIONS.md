@@ -579,3 +579,33 @@ pour chaque collectif possible referait l'erreur de kya-platform : beaucoup de c
 
 **Ce que ça coûte.** Des noms un peu plus abstraits dans le modèle de données ; les écrans, eux,
 parlent la langue de chaque organisation.
+
+## D-041 — Nettio est repris de zéro, dans un nouveau dépôt `kete-africa/nettio`
+
+**Tranché le 2026-10-08** par l'auteur (« On va reprendre Nettio complètement de zéro », « une app
+métier à commercialiser seule », « Il faut toujours penser WhatsApp et Telegram »). Précise
+`ARCHITECTURE_APP.md` §10 pour Nettio, comme D-023 l'a fait pour Firmo.
+
+**Tranché ainsi.** Nettio est réécrit comme une app Kete (D-015, D-016, D-034), né du gabarit de
+`kete-core`, avec sa base Neon, dans un dépôt neuf `kete-africa/nettio`. À la différence de Firmo
+(D-023), **la version de juillet 2026 n'est pas une source** : ni ses règles, ni ses écrans, ni sa
+charte ne servent de référence. Les sources sont la discussion de l'auteur, cette doctrine et les
+projets Kete en cours ; la vérité du produit est écrite dans `nettio/docs/product/`.
+
+- **La douleur** : le patron d'un pressing ne sait pas s'il gagne réellement de l'argent — il vend
+  au forfait, or ce que coûte un forfait dépend de son contenu réel. Nettio lui rend ce chiffre :
+  tout l'argent, le contenu réel de chaque dépôt même sous forfait, une fiche de coût par pièce et
+  par service.
+- **Un outil complet par rôle, vendu seul** : abonnement par le Compte Kete, sans Kete Enterprise.
+  Les rôles métier et leurs droits sont cochés par le patron ; les attributions du centre décident
+  quand l'organisation les y gère.
+- **Le design** est `@kete/design`, design `kete`, tel qu'il existe (pas de design propre, D-038
+  non exercé).
+- **Les chiffres sont calculés par le code, jamais par un modèle** ; Nettio ne fixe ni ne conseille
+  un prix ; un agent prépare, une personne valide.
+- **Les canaux** sont toujours WhatsApp et Telegram, derrière le port des canaux ; les adaptateurs
+  écrits dans Nettio remontent au châssis par une issue (`kete-core#86`).
+
+**Ce qui n'est pas encore su** : aucune parole du gérant pilote n'est consignée, et la preuve de la
+douleur (la marge de ses forfaits, calculée à la main sur un mois) n'est pas faite. Tant qu'elle ne
+l'est pas, la douleur reste une hypothèse.
