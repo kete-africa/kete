@@ -758,21 +758,23 @@ qu'un dirigeant demande — où en est ce projet, que sait-on de ce client — t
 **Ce que ça coûte.** Le centre devient nécessaire à ces apps. Un modèle de projet trop riche
 découragerait une entreprise de dix personnes : il doit se créer sans formulaire.
 
-## D-048 — Quatre apps pour toute entreprise : Gestion, Équipe, Engagements, Support
+## D-048 — Quatre apps pour toute entreprise : Kete Finance, Kete Team, Kete Commitments, Support
 
 **Tranché le 2026-10-13** par l'auteur (« je préfère qu'on se concentre sur les nœuds génériques » ;
 puis « va au bout du core, projets, tiers, 4 apps »). Précise D-042 ; ne concerne ni Firmo ni Nettio,
 dont le besoin est différent.
 
 **Tranché ainsi.**
-- **Gestion** — une seule app pour l'argent, en trois parties : ventes, achats et dépenses,
+- **Kete Finance** — une seule app pour l'argent, en trois parties : ventes, achats et dépenses,
   trésorerie. Un seul registre : le disponible d'un projet doit être exact à la seconde où l'on
   approuve une dépense.
-- **Équipe** — congés et absences, dossiers, habilitations, temps par projet, avances, éléments de
+- **Kete Team** — congés et absences, dossiers, habilitations, temps par projet, avances, éléments de
   paie.
-- **Engagements** — contrats, obligations, échéances, retenues et cautions, preuves. La conformité
+- **Kete Commitments** — contrats, obligations, échéances, retenues et cautions, preuves. La conformité
   y entre.
 - **Support** — tickets et délais ; le ticket sait ce que le client a acheté et qui paie.
+- **Les produits portent un nom anglais**, comme Kete Enterprise et Kete Cockpit ; leurs écrans
+  parlent la langue de qui les lit.
 - **Ces apps supposent le centre** : elles ne se vendent pas seules. Si le centre ne répond pas,
   elles continuent sur ce qu'elles savent.
 - **Elles ne font pas** la comptabilité générale, le calcul de la paie, le stock : on exporte vers
@@ -783,7 +785,7 @@ dont le besoin est différent.
 **Pourquoi.** Ce sont les quatre questions que tout dirigeant se pose : ai-je l'argent, qui est là,
 qu'ai-je signé, quel client attend. Trois apps séparées pour l'argent auraient donné trois chiffres.
 
-**Ce que ça coûte.** Gestion est le noyau commercial et financier d'un progiciel : il faut le
+**Ce que ça coûte.** Kete Finance est le noyau commercial et financier d'un progiciel : il faut le
 garder petit. La lecture des relevés et des reçus par un modèle n'est pas prouvée.
 
 ## D-049 — L'argent : trois états, par projet, avec sa preuve
