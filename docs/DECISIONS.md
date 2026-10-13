@@ -579,3 +579,154 @@ pour chaque collectif possible referait l'erreur de kya-platform : beaucoup de c
 
 **Ce que ça coûte.** Des noms un peu plus abstraits dans le modèle de données ; les écrans, eux,
 parlent la langue de chaque organisation.
+
+## D-042 — Le centre a trois endroits ; un outil métier est une app
+
+**Tranché le 2026-10-13** par l'auteur (« D'accord, merci », sur la structure finale proposée par
+l'agent ; puis « Super, modifies les documentations, fais le plan et vas au bout correctement »).
+Précise D-028 et D-037. Réflexion : `journal/2026-10-13-le-centre-la-confiance-les-collegues.md`.
+
+**Tranché ainsi.**
+- **Kete se lit en cinq étages** : `kete-core` (le socle), la couche de confiance (dans le socle,
+  D-043), Kete Enterprise (le centre), les apps (derrière le centre), Kete Cockpit (pour Kete).
+- **Le centre a trois endroits, nommés par ce qu'on y fait** :
+  - **Décider** — ce qui attend la personne, une décision à la fois avec ses preuves ; « À faire » ;
+    les demandes reçues ; ce que les agents font pendant ce temps. « Aujourd'hui » et « À faire » y
+    fusionnent.
+  - **Demander** — l'assistant, dont une réponse peut être un outil (un tableau, un formulaire) ;
+    les fils rangés par projet ; les fichiers et les pièces ouverts sur place.
+  - **Déléguer** — ses agents, leurs états, leur exécution en direct, leurs routines, « Mon
+    accueil » (D-044).
+- **Derrière** : les Apps et l'Administration (organisation, droits, règles, registre, preuves,
+  offre et limites). Le téléphone et les messageries portent Décider et Demander.
+- **Un outil métier est une app, jamais un module du centre.** Performance, enquêtes, réunions et
+  conformité, logés dans le centre pour KYA, en sortent et s'y relient par le contrat des apps.
+- **Brancher avant de remplacer** : un outil existant d'un client (son ERP) entre d'abord comme une
+  app derrière le centre, par un connecteur ; on ne refait que ce qui fait mal.
+
+**Pourquoi.** Le centre comptait une vingtaine d'endroits et quatre outils taillés pour un seul
+client : il ne se vendait pas seul, et la personne qui doit décider en quelques secondes s'y
+perdait. Trois verbes disent ce que le produit fait.
+
+**Ce que ça coûte.** Une refonte des écrans de Kete Enterprise sur le code existant (sa feuille de
+route, étapes C1 à C11), et le travail de sortir quatre domaines du centre.
+
+## D-043 — La confiance est le cœur ; le moteur des agents s'appuie sur une bibliothèque éprouvée
+
+**Tranché le 2026-10-13** par l'auteur (« Super, modifies les documentations, fais le plan et vas
+au bout correctement », sur le point complet de l'agent). Précise D-028, D-030, D-039 et D-040.
+
+**Tranché ainsi.**
+- **Ce qui distingue Kete est la couche de confiance**, écrite une fois dans `kete-core` : le
+  mandat (« l'agent X pour la personne Y, jamais plus qu'elle »), le brouillon décidé par une
+  personne, l'autonomie par type de tâche, les **règles** de l'organisation, le **registre** des
+  agents, des modèles et des connecteurs, la mémoire gouvernée, et « Comment ? » sur tout ce qu'un
+  agent a fait.
+- **Les règles** s'écrivent en une phrase, s'appliquent à un seul point de passage, et chaque refus
+  est journalisé avec la règle qui a refusé. Huit familles : données, modèles, outils et
+  connecteurs, autonomie, conservation, transparence, budgets, sortie. Une règle s'essaie sur le
+  mois passé avant d'être activée.
+- **Le registre** donne à chaque agent un propriétaire, une autonomie maximale et une date de
+  revue ; un agent sans propriétaire est mis en pause ; le registre repère les doublons, et les
+  agents d'une personne qui part changent de propriétaire.
+- **Le moteur des agents** (boucle, étapes, pause et reprise, mémoire, évaluations) est pris d'une
+  bibliothèque éprouvée — Mastra, essayée une journée avant d'être retenue — et non réécrit.
+  L'écran reste sur assistant-ui, les outils sur MCP. Pas de seconde pile d'interface.
+- **Positionnement** : le centre de travail des entreprises africaines, où les agents préparent,
+  où les personnes décident et où tout est traçable ; **souverain et réversible** (standards
+  ouverts, tout s'exporte, s'installe chez le client sans appeler Kete).
+- **La couche de confiance n'est pas vendue à d'autres éditeurs pour l'instant.**
+
+**Pourquoi.** L'assistant, les agents et les routines avaient été écrits à la main dans Kete
+Enterprise et réécrits dans Nettio, alors que la feuille de route nommait déjà une bibliothèque. Ce
+qu'aucune bibliothèque ne fournit — les droits, le brouillon, le mandat, le journal, les règles —
+est précisément ce qui a de la valeur partout.
+
+**Ce que ça coûte.** Une dépendance de plus à suivre ; une migration des agents existants, morceau
+par morceau ; l'isolation par organisation à prouver sur les tables du moteur.
+
+## D-044 — On s'adresse à une personne ; ses agents sont privés ou partagés
+
+**Tranché le 2026-10-13** par l'auteur, qui a posé le concept (« une personne peut avoir ses agents
+visibles uniquement pour lui et l'admin ; pour les agents qu'il rend visibles aux autres, ils
+peuvent l'appeler ; pour ses agents propres, les autres sont obligés de l'indexer lui pour la tâche
+et sa propre configuration interne permet de savoir qui fait quoi ») puis l'a confirmé (« Je veux
+tout. Ok ! »). Précise D-039.
+
+**Tranché ainsi.**
+- **On demande un travail à une personne**, jamais à ses agents privés. La demande a ses états :
+  reçue, prise en charge, « vous attend », rendue. Celui qui demande voit un état, pas
+  l'organisation interne de l'autre.
+- **Un agent est privé ou partagé.** Privé : son propriétaire et l'administrateur — privé ne veut
+  pas dire hors contrôle, il est au registre. Partagé : on le mentionne dans un fil ; son
+  propriétaire choisit à qui il l'ouvre.
+- **« Mon accueil »** dit, pour chaque personne, ce qui arrive chez elle et qui s'en occupe. Il
+  fonctionne sans réglage (tout arrive à la personne) ; le système propose des règles à partir de
+  ce qu'elle fait.
+- **Garde-fous.**
+  - La responsabilité reste à la personne : un travail fait par son agent est le sien.
+  - Rien ne revient au demandeur sans contrôle, sauf des données qu'il peut déjà lire.
+  - Un agent partagé agit avec les droits de celui qui l'appelle, réduits à ce que l'agent sait
+    faire — jamais avec ceux de son propriétaire.
+  - Le journal garde les deux noms : « l'agent, pour sa personne, à la demande de telle autre ».
+  - Les règles de l'organisation passent au-dessus des réglages personnels.
+  - Chaque retour dit si une personne a validé ou si un agent a répondu seul.
+  - L'intérim prend le relais d'un absent.
+
+**Pourquoi.** C'est ainsi qu'une entreprise marche déjà : on demande à quelqu'un, et comment il
+s'organise le regarde. Les agents deviennent le levier d'une personne, pas un second organigramme.
+
+**Ce que ça coûte.** Un modèle trop lourd pour une organisation de dix personnes : il doit rester
+invisible tant qu'on ne s'en sert pas. Un risque de goulot sur la personne, que l'intérim et le
+partage des agents utiles doivent lever.
+
+## D-045 — La signature Kete : sept règles de comportement, et la façon de montrer un agent
+
+**Tranché le 2026-10-13** par l'auteur (« Il faudrait que j'aie aussi une identité dans la manière
+dont les produits sont faits, UX aussi » ; puis « Super, modifies les documentations », sur le point
+complet). Précise D-035 et D-038 : les couleurs changent par app et par client, la signature reste.
+
+**Tranché ainsi.** Un produit Kete se reconnaît à son comportement :
+1. Il s'ouvre sur ce qui attend la personne, pas sur un menu.
+2. Un geste principal par écran.
+3. L'agent prépare, la personne décide — avec la même carte de vérification partout.
+4. Chaque chiffre a son unité, sa période et sa source ; « Comment ? » est à côté.
+5. Des phrases, pas des réglages — sauf pour les droits, où un tableau à cocher est plus sûr.
+6. Tout se défait.
+7. La même chose par WhatsApp et Telegram.
+
+Et un agent se montre toujours de la même façon : six états (en veille, travaille, vous attend,
+bloqué, en pause, arrêté) ; trois niveaux de détail (une ligne, les étapes, l'exécution) ; toujours
+interruptible ; le même objet pendant et après ; l'échec se dit ; jamais déguisé en humain.
+
+Chaque règle est portée par un composant de `@kete/design` et vérifiée, pas par un guide de style.
+
+**Pourquoi.** Une identité visuelle se copie et change d'un client à l'autre ; une manière de se
+comporter se reconnaît quel que soit l'habillage.
+
+**Ce que ça coûte.** Une discipline : un écran qui enfreint une règle n'est pas livré.
+
+## D-046 — S'enrôler sur l'instance partagée : des offres avec limites, la Flotte, un essai
+
+**Tranché le 2026-10-13** par l'auteur (« je devrais avoir un centre pour créer les comptes pour
+chaque entreprise et leur permettre d'avoir leurs espaces » ; puis « Super, modifies les
+documentations », sur le point complet). Précise D-026 et D-027.
+
+**Tranché ainsi.**
+- **Enrôler une entreprise ne crée aucune machine.** Sur l'instance partagée, on crée une
+  organisation, son premier administrateur, son offre, ses modules et ses limites.
+- **Des offres avec limites**, portées par le Compte Kete et lues par toutes les apps : personnes,
+  budget d'IA, stockage, apps connectées, agents. Au-delà, l'espace reste lisible et les gestes
+  coûteux attendent. Les chiffres des offres restent à fixer par l'auteur.
+- **Un essai** : une entreprise s'inscrit seule et obtient son espace, avec des données d'exemple.
+- **La Flotte** du Cockpit (D-027) crée, suspend et suit les espaces ; elle voit des compteurs,
+  jamais les données d'un client. Un espace s'exporte entier.
+- **Hébergement de l'instance partagée** : un serveur à Kete, dans la même région que la base de
+  données ; l'instance de KYA reste sur les serveurs de KYA (D-025). Tout transfert de données
+  personnelles hors du Togo passe par l'autorité de protection des données.
+
+**Pourquoi.** Les fondations étaient là (isolation par organisation, Compte Kete, abonnements) ;
+le parcours ne l'était pas : ni console, ni limites, ni essai, ni export.
+
+**Ce que ça coûte.** L'isolation entre espaces reste la garantie la plus critique. Les offres et
+leurs plafonds, le compte d'hébergement et la démarche auprès de l'autorité dépendent de l'auteur.
