@@ -730,3 +730,219 @@ le parcours ne l'était pas : ni console, ni limites, ni essai, ni export.
 
 **Ce que ça coûte.** L'isolation entre espaces reste la garantie la plus critique. Les offres et
 leurs plafonds, le compte d'hébergement et la démarche auprès de l'autorité dépendent de l'auteur.
+
+## D-047 — Le centre tient les références : les personnes, les tiers, les projets
+
+**Tranché le 2026-10-13** par l'auteur (« projets peut être un modèle puissant sur lequel s'appuient
+plein d'éléments » ; puis « Allez, actualise les docs, fais le plan et va au bout du core, projets,
+tiers, 4 apps »). Précise D-042.
+
+**Tranché ainsi.**
+- **Le centre tient trois références** que toutes les apps citent, par leur identifiant : les
+  personnes (la structure), les **tiers** (avec qui l'on travaille) et les **projets** (sur quoi).
+  Les apps tiennent les faits ; aucune ne recopie une référence.
+- **Le projet est un seul objet.** L'endroit où l'on discute d'un chantier — ses fils, ses
+  fichiers, ses consignes, sa mémoire — est celui où l'on voit son argent, son équipe, ses
+  échéances, son contrat et ses tickets. Il naît d'une phrase ou d'un devis gagné, dont les lignes
+  deviennent les postes de son budget.
+- **Le projet est un second axe de droits**, à côté de la structure : on voit ce qui touche ses
+  unités et ses projets. Un circuit peut passer par le responsable du projet.
+- **Le tiers est unique** : la même entreprise peut être cliente, fournisseur et bailleur. Les
+  doublons se fusionnent ; chaque app dit ce qu'elle sait de lui, le centre le rassemble.
+- **Sans projet, tout va dans « Fonctionnement ».** Le modèle reste invisible pour qui ne s'en
+  sert pas.
+
+**Pourquoi.** Chaque app avait son client, son fournisseur, son chantier, sans lien entre eux. Ce
+qu'un dirigeant demande — où en est ce projet, que sait-on de ce client — traverse toutes les apps.
+
+**Ce que ça coûte.** Le centre devient nécessaire à ces apps. Un modèle de projet trop riche
+découragerait une entreprise de dix personnes : il doit se créer sans formulaire.
+
+## D-048 — Quatre apps pour toute entreprise : Kete Finance, Kete Team, Kete Commitments, Support
+
+**Tranché le 2026-10-13** par l'auteur (« je préfère qu'on se concentre sur les nœuds génériques » ;
+puis « va au bout du core, projets, tiers, 4 apps »). Précise D-042 ; ne concerne ni Firmo ni Nettio,
+dont le besoin est différent.
+
+**Tranché ainsi.**
+- **Kete Finance** — une seule app pour l'argent, en trois parties : ventes, achats et dépenses,
+  trésorerie. Un seul registre : le disponible d'un projet doit être exact à la seconde où l'on
+  approuve une dépense.
+- **Kete Team** — congés et absences, dossiers, habilitations, temps par projet, avances, éléments de
+  paie.
+- **Kete Commitments** — contrats, obligations, échéances, retenues et cautions, preuves. La conformité
+  y entre.
+- **Support** — tickets et délais ; le ticket sait ce que le client a acheté et qui paie.
+- **Les produits portent un nom anglais**, comme Kete Enterprise et Kete Cockpit ; leurs écrans
+  parlent la langue de qui les lit.
+- **Ces apps supposent le centre** : elles ne se vendent pas seules. Si le centre ne répond pas,
+  elles continuent sur ce qu'elles savent.
+- **Elles ne font pas** la comptabilité générale, le calcul de la paie, le stock : on exporte vers
+  l'outil du comptable, ou on le branche par un connecteur.
+- **Enquêtes** rejoint les formulaires du centre ; **Réunions** devient un fil à plusieurs ;
+  **Performance** reste un outil de pilotage à part.
+
+**Pourquoi.** Ce sont les quatre questions que tout dirigeant se pose : ai-je l'argent, qui est là,
+qu'ai-je signé, quel client attend. Trois apps séparées pour l'argent auraient donné trois chiffres.
+
+**Ce que ça coûte.** Kete Finance est le noyau commercial et financier d'un progiciel : il faut le
+garder petit. La lecture des relevés et des reçus par un modèle n'est pas prouvée.
+
+## D-049 — L'argent : trois états, par projet, avec sa preuve
+
+**Tranché le 2026-10-13** par l'auteur (« il faut qu'on suive les fonds disponibles pour chaque
+projet afin de pouvoir séparer clairement et savoir ce qui avantage et si les fonds sont utilisés
+pour ce qu'il faut »). Précise D-048.
+
+**Tranché ainsi.**
+- **Chaque fait d'argent porte un projet** — ou « Fonctionnement » — et, pour une dépense, un poste
+  du budget. Les apps l'envoient au centre dans un contrat commun.
+- **Trois états** : ce qui est en caisse et en banque, ce qui est **réservé** aux projets (un
+  acompte reçu n'est pas encore à soi), ce qui est **engagé** (une commande passée, une paie due).
+  Le « vraiment disponible » est le reste.
+- **Par projet** : reçu, engagé, dépensé, disponible ; ce qu'il rapporte ; et si ses fonds ont payé
+  ce pour quoi ils ont été reçus. La convention d'un bailleur devient des règles de dépense.
+- **La séparation des rôles** : qui demande n'approuve pas, qui approuve ne paie pas.
+- **La preuve** : chaque geste d'argent porte sa pièce. Un brouillon lu sur une photo montre d'où
+  vient chaque champ.
+- **Kete n'exécute aucun paiement** et ne tient pas la comptabilité générale. Les montants sont
+  calculés par le code.
+
+**Pourquoi.** L'argent d'un projet qui paie un autre projet est l'erreur la plus courante et la
+moins visible ; un bailleur ou un client la demande en premier.
+
+**Ce que ça coûte.** Ajouter le projet après coup obligerait à reclasser l'historique : il doit
+être là dès le premier fait. Les coûts partagés (salaires, loyer) restent d'abord dans
+« Fonctionnement ».
+
+## D-050 — Planifier : le temps est le quatrième endroit du centre
+
+**Tranché le 2026-10-13** par l'auteur (« La vue calendrier pourrait être une vue capitale […] on
+peut distinguer sa vue personnelle et la vue complète qui montre jusqu'aux personnes en congés » ;
+puis « fais et toi même fusionnes », sur la maquette 3.1). Précise D-042 : le centre a désormais
+quatre endroits, toujours nommés par ce qu'on y fait.
+
+**Tranché ainsi.**
+- **Planifier** rejoint Décider, Demander et Déléguer. Ce n'est pas une app : c'est la vue du temps
+  du centre, qui rassemble les faits datés que les apps lui envoient — réunions, échéances
+  (factures, contrats), congés, tâches avec leur durée, passages des agents et des routines — et
+  l'agenda externe de la personne, par un connecteur.
+- **Trois vues, selon les droits** : *ma vue* (sa semaine), *mon équipe* (une ligne par personne),
+  *toute l'organisation* (par unité, avec les absents). On y voit qui est là et qui est absent,
+  jamais le motif d'une absence ; des autres, seulement ce qu'ils partagent.
+- **L'assistant signale les conflits de lui-même** (un responsable absent le jour d'une réception)
+  et propose comment les régler, en un geste. Il **propose des blocs** dans les trous de la
+  semaine, chacun avec sa raison ; la personne les garde ou les retire. Rien n'entre dans son
+  agenda sans elle.
+- Sur un téléphone, la semaine devient une liste de jours.
+
+**Pourquoi.** Le temps est la ressource la plus rare d'une petite entreprise, et il est éparpillé :
+les congés dans une app, les échéances dans une autre, les réunions ailleurs. Une décision
+(approuver un congé, accepter une livraison) se prend mal sans voir la semaine.
+
+**Ce que ça coûte.** Un connecteur d'agenda par fournisseur, à brancher plutôt qu'à écrire. Une
+discipline sur la vie privée : la vue d'équipe ne doit jamais devenir une surveillance.
+
+## D-051 — La méthode : un rythme de travail que les agents tiennent avec la personne
+
+**Tranché le 2026-10-13** par l'auteur (« le système va au delà de la centralisation, on arrive à
+une méthodologie de travail qui aide vraiment les employés à s'organiser mieux […] les agents
+fournissent ou leur disent ce qu'ils doivent faire »). Précise D-042 et D-045.
+
+**Tranché ainsi.** Kete n'est pas seulement l'endroit où tout se trouve ; c'est une façon de
+travailler, en quatre moments :
+- **Le matin** — Décider : une décision à la fois, avec ses preuves, jusqu'à « tout est réglé » ;
+  puis la journée proposée dans Planifier.
+- **La journée** — Demander et Déléguer ; les agents travaillent sur le serveur de l'organisation,
+  même téléphone éteint ; « Pendant ce temps » dit qui fait quoi.
+- **Le soir** — la clôture, en deux minutes : une note en cinq cases (fait, pas fait, bloqué,
+  demain, appris), écrite ou dite, dans Kete ou par une note vocale sur WhatsApp. Kete en tire des
+  **rangements proposés** — reporter, clore, bloquer un créneau, confier, corriger une fiche,
+  proposer une leçon — que la personne coche ; rien ne change sans ce geste, et tout se défait.
+- **La semaine** — la revue : le résumé de la semaine, le plan de la suivante, ce qui a été appris,
+  ce que les agents ont fait.
+
+**Les agents proposent ce qu'il faut faire ; ils ne commandent pas.** Le plan est une proposition,
+la personne reste maîtresse de sa journée. Un responsable voit les engagements et les blocages de
+son équipe, jamais le détail d'un agenda ni le temps passé minute par minute.
+
+**Pourquoi.** Centraliser ne suffit pas : une personne bien informée peut rester débordée. Ce qui
+aide vraiment, c'est un rythme simple, tenu chaque jour, où l'IA fait le travail de rangement.
+
+**Ce que ça coûte.** Une habitude à faire prendre — elle n'est prouvée qu'à l'usage. Les rangements
+du soir touchent des objets de plusieurs apps : chacun passe par le geste de l'app, avec son niveau.
+
+## D-052 — Le tableau, la routine et le résumé sont un seul objet ; indexer est un choix
+
+**Tranché le 2026-10-13** par l'auteur (« un système de résumé quotidien, hebdomadaire que la
+personne peut créer et décider d'indexer depuis une page centrale de widgets » ; « à la fin d'une
+journée, la personne peut aussi noter au-delà, ce qui aide l'IA à restructurer certains
+éléments »). Précise les tableaux de bord, les routines et les notes de Kete Enterprise.
+
+**Tranché ainsi.**
+- **Un résumé n'est pas un rapport : c'est le passage entre le travail et la mémoire.** Il clôt (ce
+  qui est fait, ce qui reste, ce qui bloque), il transmet (au responsable, à l'équipe, à qui
+  remplace pendant un congé, à un bailleur) et il se souvient.
+- **Un même objet, trois moments** : composé une fois dans « Mon tableau », il est *regardé* en
+  direct, *envoyé* à heure fixe (le soir, le vendredi), *gardé* comme résumé. Ses chiffres sont
+  calculés par le code et figés au moment du résumé ; son texte est écrit par l'agent avec ses
+  sources ; la note de la personne s'y ajoute.
+- **Indexer est le choix de la personne** : dans son espace, dans un projet, pour une équipe.
+  Indexé, le résumé devient une mémoire datée que l'assistant cite et que l'équipe retrouve ; non
+  indexé, il reste à elle. Elle peut retirer un résumé de l'index à tout moment.
+- **« Mon tableau » est une seule entrée**, en trois onglets : En direct, Résumés, Carnet.
+  **Noter** se fait depuis n'importe quelle page ; Kete comprend la note — un moment devient un
+  rappel, un savoir devient une leçon proposée, un fait devient une correction à valider.
+
+**Pourquoi.** Trois mécanismes séparés (tableau, routine, résumé) auraient donné trois écrans à
+apprendre pour une seule idée : ce que je suis, ce que j'envoie, ce que je garde.
+
+**Ce que ça coûte.** Un résumé indexé est une donnée de l'organisation : il suit les droits du
+projet ou de l'équipe où il est rangé, et sa durée de conservation.
+
+## D-053 — Tout ce qui capitalise suit un seul cycle : créer, utiliser, apprendre, évaluer, promouvoir
+
+**Tranché le 2026-10-13** par l'auteur (« le concept de skills avec lessons qui capitalise la
+connaissance de chaque personne afin qu'une personne autre que le designer puisse utiliser un agent
+et que le design respecte tout […] Pareil pour les apps ? »). Précise les principes 1 et 5 et le
+registre des ressources.
+
+**Tranché ainsi.**
+- **Un skill porte le savoir-faire d'une personne** — la designer, la comptable, le chef de
+  chantier. Quelqu'un d'autre l'utilise par un agent, et le résultat le respecte sans qu'il ait à
+  le connaître.
+- **L'usage produit des leçons** : une correction, une remarque, un écart relevé par un agent.
+  Recueillies avec consentement, elles sont des données, jamais des consignes, et arrivent chez la
+  propriétaire du skill.
+- **La propriétaire essaie, garde ou écarte** chaque leçon. Une leçon gardée devient un cas de
+  test ; une nouvelle version doit réussir tous les cas précédents avant d'être publiée.
+- **La promotion passe un palier à la fois** — moi, l'équipe, l'unité, l'organisation — avec une
+  revue selon le risque.
+- **Le même cycle vaut pour les agents** (l'autonomie se gagne par les preuves et se retire) **et
+  pour les apps** (née dans la fabrique pour une personne ou une équipe, améliorée par ses retours,
+  ses scénarios de test réussis, revue par l'informatique avant chaque palier).
+
+**Pourquoi.** Le savoir d'une entreprise est dans la tête de quelques personnes et part avec elles.
+Un seul cycle, visible, le fait passer de la personne à l'organisation sans le figer.
+
+**Ce que ça coûte.** Une revue humaine à chaque version et à chaque palier ; une propriétaire par
+skill, à remplacer quand elle part.
+
+## D-054 — Le téléphone est natif : la pile du matin, la voix du soir, le terrain
+
+**Tranché le 2026-10-13** par l'auteur (« fais et toi même fusionnes », sur la proposition : pour
+beaucoup, le téléphone est l'outil principal). Précise D-045, règle 7.
+
+**Tranché ainsi.** Sur un téléphone, Kete n'est pas l'écran d'ordinateur rétréci :
+- **Le matin, la pile en plein écran** : une décision par écran, ses preuves en une ligne, Oui ou
+  Non au pouce, jusqu'à « tout est réglé ».
+- **Le soir, la voix** : la clôture se dit, dans Kete ou par une note vocale sur WhatsApp ; Kete
+  répond par les rangements proposés, à valider d'un geste.
+- **Le terrain** : la prochaine chose de la journée en grand, un rapport dicté puis relu à voix
+  haute avant d'être validé, de grandes cibles, et « Plein soleil » pour lire dehors.
+
+**Pourquoi.** Les gens qui font tourner une petite entreprise africaine décident entre deux
+rendez-vous et rendent compte depuis un chantier. Ce qui se fait mal au pouce ne se fait pas.
+
+**Ce que ça coûte.** Des écrans propres au téléphone, pas seulement des règles de mise en page ; la
+voix suppose une transcription fiable en français parlé, à prouver avec de vraies notes.
