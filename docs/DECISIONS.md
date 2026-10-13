@@ -730,3 +730,85 @@ le parcours ne l'était pas : ni console, ni limites, ni essai, ni export.
 
 **Ce que ça coûte.** L'isolation entre espaces reste la garantie la plus critique. Les offres et
 leurs plafonds, le compte d'hébergement et la démarche auprès de l'autorité dépendent de l'auteur.
+
+## D-047 — Le centre tient les références : les personnes, les tiers, les projets
+
+**Tranché le 2026-10-13** par l'auteur (« projets peut être un modèle puissant sur lequel s'appuient
+plein d'éléments » ; puis « Allez, actualise les docs, fais le plan et va au bout du core, projets,
+tiers, 4 apps »). Précise D-042.
+
+**Tranché ainsi.**
+- **Le centre tient trois références** que toutes les apps citent, par leur identifiant : les
+  personnes (la structure), les **tiers** (avec qui l'on travaille) et les **projets** (sur quoi).
+  Les apps tiennent les faits ; aucune ne recopie une référence.
+- **Le projet est un seul objet.** L'endroit où l'on discute d'un chantier — ses fils, ses
+  fichiers, ses consignes, sa mémoire — est celui où l'on voit son argent, son équipe, ses
+  échéances, son contrat et ses tickets. Il naît d'une phrase ou d'un devis gagné, dont les lignes
+  deviennent les postes de son budget.
+- **Le projet est un second axe de droits**, à côté de la structure : on voit ce qui touche ses
+  unités et ses projets. Un circuit peut passer par le responsable du projet.
+- **Le tiers est unique** : la même entreprise peut être cliente, fournisseur et bailleur. Les
+  doublons se fusionnent ; chaque app dit ce qu'elle sait de lui, le centre le rassemble.
+- **Sans projet, tout va dans « Fonctionnement ».** Le modèle reste invisible pour qui ne s'en
+  sert pas.
+
+**Pourquoi.** Chaque app avait son client, son fournisseur, son chantier, sans lien entre eux. Ce
+qu'un dirigeant demande — où en est ce projet, que sait-on de ce client — traverse toutes les apps.
+
+**Ce que ça coûte.** Le centre devient nécessaire à ces apps. Un modèle de projet trop riche
+découragerait une entreprise de dix personnes : il doit se créer sans formulaire.
+
+## D-048 — Quatre apps pour toute entreprise : Gestion, Équipe, Engagements, Support
+
+**Tranché le 2026-10-13** par l'auteur (« je préfère qu'on se concentre sur les nœuds génériques » ;
+puis « va au bout du core, projets, tiers, 4 apps »). Précise D-042 ; ne concerne ni Firmo ni Nettio,
+dont le besoin est différent.
+
+**Tranché ainsi.**
+- **Gestion** — une seule app pour l'argent, en trois parties : ventes, achats et dépenses,
+  trésorerie. Un seul registre : le disponible d'un projet doit être exact à la seconde où l'on
+  approuve une dépense.
+- **Équipe** — congés et absences, dossiers, habilitations, temps par projet, avances, éléments de
+  paie.
+- **Engagements** — contrats, obligations, échéances, retenues et cautions, preuves. La conformité
+  y entre.
+- **Support** — tickets et délais ; le ticket sait ce que le client a acheté et qui paie.
+- **Ces apps supposent le centre** : elles ne se vendent pas seules. Si le centre ne répond pas,
+  elles continuent sur ce qu'elles savent.
+- **Elles ne font pas** la comptabilité générale, le calcul de la paie, le stock : on exporte vers
+  l'outil du comptable, ou on le branche par un connecteur.
+- **Enquêtes** rejoint les formulaires du centre ; **Réunions** devient un fil à plusieurs ;
+  **Performance** reste un outil de pilotage à part.
+
+**Pourquoi.** Ce sont les quatre questions que tout dirigeant se pose : ai-je l'argent, qui est là,
+qu'ai-je signé, quel client attend. Trois apps séparées pour l'argent auraient donné trois chiffres.
+
+**Ce que ça coûte.** Gestion est le noyau commercial et financier d'un progiciel : il faut le
+garder petit. La lecture des relevés et des reçus par un modèle n'est pas prouvée.
+
+## D-049 — L'argent : trois états, par projet, avec sa preuve
+
+**Tranché le 2026-10-13** par l'auteur (« il faut qu'on suive les fonds disponibles pour chaque
+projet afin de pouvoir séparer clairement et savoir ce qui avantage et si les fonds sont utilisés
+pour ce qu'il faut »). Précise D-048.
+
+**Tranché ainsi.**
+- **Chaque fait d'argent porte un projet** — ou « Fonctionnement » — et, pour une dépense, un poste
+  du budget. Les apps l'envoient au centre dans un contrat commun.
+- **Trois états** : ce qui est en caisse et en banque, ce qui est **réservé** aux projets (un
+  acompte reçu n'est pas encore à soi), ce qui est **engagé** (une commande passée, une paie due).
+  Le « vraiment disponible » est le reste.
+- **Par projet** : reçu, engagé, dépensé, disponible ; ce qu'il rapporte ; et si ses fonds ont payé
+  ce pour quoi ils ont été reçus. La convention d'un bailleur devient des règles de dépense.
+- **La séparation des rôles** : qui demande n'approuve pas, qui approuve ne paie pas.
+- **La preuve** : chaque geste d'argent porte sa pièce. Un brouillon lu sur une photo montre d'où
+  vient chaque champ.
+- **Kete n'exécute aucun paiement** et ne tient pas la comptabilité générale. Les montants sont
+  calculés par le code.
+
+**Pourquoi.** L'argent d'un projet qui paie un autre projet est l'erreur la plus courante et la
+moins visible ; un bailleur ou un client la demande en premier.
+
+**Ce que ça coûte.** Ajouter le projet après coup obligerait à reclasser l'historique : il doit
+être là dès le premier fait. Les coûts partagés (salaires, loyer) restent d'abord dans
+« Fonctionnement ».
