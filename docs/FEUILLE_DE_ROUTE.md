@@ -57,6 +57,11 @@ panne simulée déclenche une alerte ; l'agent répond sur l'état des apps.
       dans les dépôts de KYA, jamais un fork (D-025).
 - [ ] L'instance partagée et ses tenants, administrés par la flotte du Cockpit (D-026, D-027).
 - [ ] Catalogue de capacités et d'outils open source validés.
+- [ ] **L'unification (D-056 à D-058)**, dans cet ordre : décider ; une simulation complète du
+      flux, validée par l'auteur ; les tenues et le relais ; le moteur de politiques ; les fils et
+      les canaux ; les écrans d'après une maquette v5 validée ; les références (lieux, actifs,
+      catalogue, groupe) et le savoir ; les quatre apps sur le modèle unifié ; le parcours complet
+      dans la démo ; les vrais comptes branchés. L'auteur puis KYA testent à la fin.
 
 **Preuve** : des gains mesurés chez le pilote, publiés avec leur preuve.
 
