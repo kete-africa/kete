@@ -1092,3 +1092,33 @@ seule réponse, la même pour une personne et pour un agent, journalisée avec c
 
 **Ce que ça coûte.** Reprendre deux moteurs qui marchent (circuits et règles) en un seul. Une
 politique trop large bloque tout : chacune naît à l'essai, observée avant d'être appliquée.
+
+## D-059 — kete.software, une démo publique et Kete Intelligence dans chaque app, généraliser
+
+**Tranché le 2026-10-16** par l'auteur (« je deviens kete.software car mondial. Pour chacune des
+apps, il faut la démo publique, ça doit faire partie des principes, comme le fait d'avoir Kete
+Intelligence à l'intérieur des apps. Si tout est implémenté les tarifs viendront ; il faut, au fur
+et à mesure, qu'on généralise beaucoup plus pour aller vite »). Précise D-001, D-045 et la règle 4
+de la feuille de route.
+
+**Tranché ainsi.**
+- **Le domaine principal devient `kete.software`**, parce que Kete vise le monde : le site, le
+  Compte Kete, le Cockpit et les apps s'y rangent. L'organisation GitHub reste `kete-africa` tant
+  qu'aucune autre décision ne la change.
+- **Chaque app a sa démo publique**, jouable sans compte : on la parcourt, on joue les rôles, on
+  voit ce qu'elle fait vraiment, comme la simulation du système unifié. C'est un principe (le 8e).
+- **Kete Intelligence est dans chaque app** : le même tiroir, le même fil, les mêmes règles —
+  agir avec les droits de la personne, préparer, laisser décider. C'est un principe (le 9e).
+- **Les tarifs viennent quand tout est implémenté** ; ils ne bloquent rien avant.
+- **Généraliser à chaque pas** : un besoin manifestement commun est construit dès sa première
+  occurrence comme un module autonome, réutilisable par le centre, les apps, le Cockpit et Pono.
+  La règle « un module entre dans le socle quand deux produits en ont besoin » s'assouplit : quand
+  le second usage est déjà connu, on n'attend pas qu'il arrive.
+
+**Pourquoi.** Une démo qu'on joue vend mieux qu'une page qui promet, et elle prouve d'abord à
+nous-mêmes que le flux tient. Kete Intelligence partout fait de chaque app une porte vers le même
+système. Généraliser tôt évite d'écrire deux fois ce que le centre, les apps et Pono partagent.
+
+**Ce que ça coûte.** Une démo par app à tenir à jour avec l'app. Généraliser trop tôt peut figer
+un module avant de connaître son second usage : on ne généralise que ce dont le second usage est
+déjà connu.

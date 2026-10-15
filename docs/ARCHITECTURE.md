@@ -33,7 +33,7 @@
 
 ## 3. Le Compte Kete (D-011)
 
-- Construit sur **Better Auth**, dans un service à lui : `compte.kete.africa` (nom à confirmer).
+- Construit sur **Better Auth**, dans un service à lui : `compte.kete.software` (D-059).
 - **Connexion par e-mail** par défaut (mot de passe ou lien magique) ; téléphone plus tard.
 - **Organisations** : une entreprise cliente est une organisation, avec ses membres et un rôle
   d'organisation (propriétaire, administrateur, membre).
@@ -149,8 +149,9 @@ retour, design system.
 - **Coolify** : zone ops (Compte Kete, Cockpit), zone produits (apps), plus tard zone clients.
 - **Uptime Kuma sur un VPS séparé.**
 - **Secrets** hors des dépôts ; sauvegardes testées par restauration.
-- **Domaines** (proposition) : `kete.africa` (site), `compte.kete.africa`,
-  `cockpit.kete.africa`, et un sous-domaine ou un domaine propre par app.
+- **Domaines** (D-059) : `kete.software` (site), `compte.kete.software`,
+  `cockpit.kete.software`, et un sous-domaine ou un domaine propre par app ; chaque app a sa démo
+  publique.
 
 ## 12. Les dépôts
 

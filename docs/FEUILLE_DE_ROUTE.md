@@ -10,12 +10,15 @@
    preuve de l'étape 4.
 2. **Un métier à la fois** dans Kete Apps.
 3. **La doctrine avant le code** : chaque produit renvoie à ce dépôt.
-4. **On ne construit que ce qui a déjà fait mal.**
+4. **On ne construit que ce qui a déjà fait mal.** Mais ce qui est manifestement commun se
+   construit dès la première fois comme un module autonome, réutilisable partout (D-059).
+5. **Chaque app livrée a sa démo publique et Kete Intelligence** (D-059) ; les tarifs viennent
+   quand tout est implémenté.
 
 ## Étape 0 — La maison posée
 
 - [x] Organisation GitHub `kete-africa`, dépôt `kete`, logo importé.
-- [ ] Nom sécurisé : kete.africa, dépôt OAPI, comptes sur les réseaux.
+- [ ] Nom sécurisé : kete.software (D-059), dépôt OAPI, comptes sur les réseaux.
 - [ ] Société : Vitatech → Kete (dénomination au RCCM ou nouvelle société), avec un comptable.
 - [ ] Vision, mandat et horizons complétés par l'auteur (`FONDEMENT.md`, `VISION.md`, `MANDAT.md`).
 - [x] Style visuel tranché : v1 rectangle (D-010) ; reste `@kete/design`.
