@@ -1036,7 +1036,20 @@ l'attention, la conversation, l'état. Kete les sépare et les relie par les mê
   remplace Décider et la cloche ; le matin, c'est la pile.
 - **Le fil « Kete »** remplace la page Demander : le point du matin, ses questions, ses rappels.
 - **La conversation est le moyen de se coordonner, pas la maison** : les fils de mes objets, peu
-  dans la barre (les actifs, les épinglés), le reste par la recherche. Pas de canaux génériques.
+  dans la barre (les actifs, les épinglés), le reste par la recherche.
+- **Les groupes sont normaux** (précisé le 2026-10-16, l'auteur : « les entreprises comme KYA
+  utilisent beaucoup les mails […] avoir un Kete fil dans lequel on peut créer des groupes, faire
+  des échanges avec des agents, ils acceptent ; ça évite trop de mails ») : ceux qui naissent de la
+  structure (la direction, un service, l'équipe d'un projet) et ceux qu'on crée (un comité, un
+  chantier, un appel d'offres), chacun avec un responsable. Le fil remplace le mail interne.
+- **La trace au moins aussi bonne que le mail**, puisque c'est pour elle qu'on écrit des mails :
+  chaque message est un événement daté, jamais réécrit (une modification garde l'original) ;
+  « lu par » et sa date ; « pour action » devient une tenue, « pour info » un simple message ; les
+  membres et abonnés disent qui savait et depuis quand ; les pièces gardées et versionnées ; la
+  recherche ; la conservation fixée par une politique ; l'export d'un fil en preuve horodatée.
+- **Le mail reste pour le dehors, branché sur les fils** : un mail reçu entre dans le fil de son
+  dossier, une réponse part par mail depuis la boîte de la personne, un fil peut avoir son
+  adresse. Qui préfère encore le mail reçoit le résumé de ses fils et y répond par mail.
 - **Les agents sont membres des fils et parlent peu** : quand ils ont fini, ou besoin d'un geste.
 - **L'état est à droite du fil** quand le fil porte un objet : qui tient quoi, ce qui attend et
   depuis quand, les chiffres, les dates.
@@ -1050,7 +1063,8 @@ mélange tout. La ressource rare d'une personne, c'est son attention ; la premi�
 matin est « qu'est-ce qui a besoin de moi ? ».
 
 **Ce que ça coûte.** C'est un pari : que les équipes travaillent dans des fils Kete plutôt que
-dans leurs groupes WhatsApp. Il se juge à l'usage, à la fin. L'API WhatsApp Business a ses règles
+dans leurs mails et leurs groupes WhatsApp. Chez KYA, où le mail sert à tracer, les fils sont
+acceptés s'ils tracent aussi bien. Il se juge à l'usage, à la fin. L'API WhatsApp Business a ses règles
 (modèles approuvés, fenêtre de 24 h, restrictions de Meta sur les assistants d'IA généralistes) :
 à vérifier avant de bâtir les cartes dessus ; Telegram et les notifications de l'app en relais.
 
