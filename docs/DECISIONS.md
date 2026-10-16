@@ -976,3 +976,149 @@ projets Kete en cours ; la vérité du produit est écrite dans `nettio/docs/pro
 **Ce qui n'est pas encore su** : aucune parole du gérant pilote n'est consignée, et la preuve de la
 douleur (la marge de ses forfaits, calculée à la main sur un mois) n'est pas faite. Tant qu'elle ne
 l'est pas, la douleur reste une hypothèse.
+
+## D-056 — Un seul modèle vivant : le journal, le fil, la tenue, le geste, la politique
+
+**Tranché le 2026-10-15** par l'auteur (« quel est ton plan pour aller au bout en commençant par
+l'unification ? », puis « Super, actualise la doc »), sur l'inventaire de `kete-core` et de
+`kete-enterprise` : 32 paquets et 43 fonctions bien faits un à un, mais sans forme d'ensemble.
+Précise D-042, D-047 et D-049.
+
+**Tranché ainsi.** Toute l'entreprise tient en cinq objets vivants, au-dessus des trois références
+du centre (structure, tiers, projets) et des objets des apps :
+- **Le journal** : tout ce qui arrive — un message, un paiement, une décision, un fait d'une app —
+  devient un événement daté, signé, jamais réécrit.
+- **Le fil** : la conversation d'un objet (un projet, un tiers, un devis, un dossier, un ticket),
+  qui naît avec lui et se range à sa clôture ; quelques fils libres et le fil de chacun avec Kete.
+  Ses membres sont des personnes, des agents, et les contacts extérieurs par leur canal.
+- **La tenue** : chaque chose en cours — qui la tient, ce qu'elle attend et de qui, depuis quand.
+  **Aucun état ne permet « personne »** : ce qui vieillit est relancé, ce qu'un absent tient passe
+  à son suppléant puis à son responsable.
+- **Le geste** : chaque action proposée. Fait seul dans le mandat d'un agent, sinon une carte à
+  décider, la même dans le fil, dans « Pour moi » et sur WhatsApp — réglée à un endroit, réglée
+  partout.
+- **La politique** (D-058) : ce qui décide si un geste se fait, avec quel accord, ou pas.
+
+**Un routeur** rattache chaque événement à son objet, son fil et sa tenue ; quand il n'est pas sûr,
+il le dit par une carte « à classer » plutôt que de deviner.
+
+**Ce qui se fond dedans**, dans `kete-enterprise` : les six façons de dire « une chose en cours »
+(demandes, à faire, actions de réunion, étapes de circuit, brouillons, tâches d'agents) deviennent
+des tenues ; les cinq façons de se parler (assistant, échanges entre assistants, téléphone,
+notifications, mail) deviennent des fils et des canaux ; la bibliothèque, les documents, les
+dossiers, les savoir-faire et la mémoire deviennent un seul savoir. Les primitives communes vont
+dans `kete-core` quand une deuxième app en a besoin.
+
+**Quatre références rejoignent le centre** : les lieux, les actifs et le parc installé, le
+catalogue, le groupe (plusieurs sociétés). Les fonds et les bailleurs restent des contrats de Kete
+Commitments avec l'argent par projet ; les risques sont les constats de la conformité ; les
+objectifs, la performance.
+
+**Pourquoi.** Ce qui fluidifie une entreprise, c'est que rien n'attende entre deux personnes sans
+que quelqu'un le sache. Six modèles de « chose en cours » sans vue commune rendent la question
+« qui tient quoi ? » impossible à répondre ; c'est le travail sur le travail que Kete doit
+supprimer.
+
+**Ce que ça coûte.** Une reprise de fonctions qui marchent : chaque source branche sa tenue, puis
+ses anciennes tables sont retirées une à une, sans tout réécrire d'un coup. Le routeur se
+trompera ; il doit le dire, jamais le cacher.
+
+## D-057 — L'écran : « Pour moi », la conversation au centre, l'état à côté
+
+**Tranché le 2026-10-15** par l'auteur (« j'aimerais pouvoir avoir une démo complète […] c'est
+après cela qu'on peut véritablement lancer le codage »), sur la discussion de l'interface de Buzz,
+de Claude et de la maquette v4 « Kete par les fils ». Remplace l'accueil de D-045 (Décider) ;
+précise D-050 et D-054.
+
+**Tranché ainsi.** Chaque outil connu sert bien une de trois choses et mal les deux autres :
+l'attention, la conversation, l'état. Kete les sépare et les relie par les mêmes objets.
+- **On ouvre sur « Pour moi »** : à décider, à répondre, ce qui attend chez moi, à classer. Il
+  remplace Décider et la cloche ; le matin, c'est la pile.
+- **Le fil « Kete »** remplace la page Demander : le point du matin, ses questions, ses rappels.
+- **La conversation est le moyen de se coordonner, pas la maison** : les fils de mes objets, peu
+  dans la barre (les actifs, les épinglés), le reste par la recherche.
+- **Les groupes sont normaux** (précisé le 2026-10-16, l'auteur : « les entreprises comme KYA
+  utilisent beaucoup les mails […] avoir un Kete fil dans lequel on peut créer des groupes, faire
+  des échanges avec des agents, ils acceptent ; ça évite trop de mails ») : ceux qui naissent de la
+  structure (la direction, un service, l'équipe d'un projet) et ceux qu'on crée (un comité, un
+  chantier, un appel d'offres), chacun avec un responsable. Le fil remplace le mail interne.
+- **La trace au moins aussi bonne que le mail**, puisque c'est pour elle qu'on écrit des mails :
+  chaque message est un événement daté, jamais réécrit (une modification garde l'original) ;
+  « lu par » et sa date ; « pour action » devient une tenue, « pour info » un simple message ; les
+  membres et abonnés disent qui savait et depuis quand ; les pièces gardées et versionnées ; la
+  recherche ; la conservation fixée par une politique ; l'export d'un fil en preuve horodatée.
+- **Le mail reste pour le dehors, branché sur les fils** : un mail reçu entre dans le fil de son
+  dossier, une réponse part par mail depuis la boîte de la personne, un fil peut avoir son
+  adresse. Qui préfère encore le mail reçoit le résumé de ses fils et y répond par mail.
+- **Les agents sont membres des fils et parlent peu** : quand ils ont fini, ou besoin d'un geste.
+- **L'état est à droite du fil** quand le fil porte un objet : qui tient quoi, ce qui attend et
+  depuis quand, les chiffres, les dates.
+- **Les cartes arrivent aussi sur WhatsApp et en notification** : on décide sans ouvrir Kete ; une
+  réponse dictée devient des gestes. Le client, lui, reste sur WhatsApp.
+- **Avant le code**, une simulation complète du système (HTML, CSS, JS) montre le flux de bout en
+  bout ; l'auteur la valide, puis une maquette v5 valide les écrans.
+
+**Pourquoi.** Slack et WhatsApp noient l'attention, les ERP n'ont pas la conversation, le mail
+mélange tout. La ressource rare d'une personne, c'est son attention ; la première question du
+matin est « qu'est-ce qui a besoin de moi ? ».
+
+**Ce que ça coûte.** C'est un pari : que les équipes travaillent dans des fils Kete plutôt que
+dans leurs mails et leurs groupes WhatsApp. Chez KYA, où le mail sert à tracer, les fils sont
+acceptés s'ils tracent aussi bien. Il se juge à l'usage, à la fin. L'API WhatsApp Business a ses règles
+(modèles approuvés, fenêtre de 24 h, restrictions de Meta sur les assistants d'IA généralistes) :
+à vérifier avant de bâtir les cartes dessus ; Telegram et les notifications de l'app en relais.
+
+## D-058 — La gouvernance : un seul moteur de politiques, appliqué au geste
+
+**Tranché le 2026-10-15** par l'auteur (« Gouvernance, policies, doit-on compléter des éléments
+centraux d'une entreprise ? », puis « Super, actualise la doc »). Précise D-028, D-040 et D-043.
+
+**Tranché ainsi.**
+- **Une politique est une phrase** avec son périmètre (unités, projets, montants, canal, tiers),
+  son responsable, sa version et sa période d'essai. Elle s'évalue au seul endroit où tout passe :
+  le geste, d'une personne ou d'un agent. Elle répond : autorisé ; autorisé avec l'accord d'un
+  circuit ; refusé, en disant par quelle politique.
+- **Les droits restent** ce qu'ils sont — qui tient quoi, où (D-028). Les circuits d'approbation
+  et les règles des agents (D-043) deviennent des politiques : un seul moteur pour la même question,
+  « qui peut faire quoi, jusqu'à combien, avec quel accord ». Les contrôles de conformité (D-040)
+  pointent vers elles : une politique tenue devient une preuve.
+- **Six politiques qu'on doit pouvoir écrire** : qui engage l'entreprise (pouvoirs de signature) ;
+  qui parle au client en son nom, sur quel canal, avec quels modèles ; les limites de dépense par
+  rôle et par projet ; la suppléance ; la conservation et la confidentialité ; le consentement des
+  contacts extérieurs.
+
+**Pourquoi.** Des agents vont écrire aux clients et engager des dépenses. La confiance tient à une
+seule réponse, la même pour une personne et pour un agent, journalisée avec ce qui l'a décidée.
+
+**Ce que ça coûte.** Reprendre deux moteurs qui marchent (circuits et règles) en un seul. Une
+politique trop large bloque tout : chacune naît à l'essai, observée avant d'être appliquée.
+
+## D-059 — kete.software, une démo publique et Kete Intelligence dans chaque app, généraliser
+
+**Tranché le 2026-10-16** par l'auteur (« je deviens kete.software car mondial. Pour chacune des
+apps, il faut la démo publique, ça doit faire partie des principes, comme le fait d'avoir Kete
+Intelligence à l'intérieur des apps. Si tout est implémenté les tarifs viendront ; il faut, au fur
+et à mesure, qu'on généralise beaucoup plus pour aller vite »). Précise D-001, D-045 et la règle 4
+de la feuille de route.
+
+**Tranché ainsi.**
+- **Le domaine principal devient `kete.software`**, parce que Kete vise le monde : le site, le
+  Compte Kete, le Cockpit et les apps s'y rangent. L'organisation GitHub reste `kete-africa` tant
+  qu'aucune autre décision ne la change.
+- **Chaque app a sa démo publique**, jouable sans compte : on la parcourt, on joue les rôles, on
+  voit ce qu'elle fait vraiment, comme la simulation du système unifié. C'est un principe (le 8e).
+- **Kete Intelligence est dans chaque app** : le même tiroir, le même fil, les mêmes règles —
+  agir avec les droits de la personne, préparer, laisser décider. C'est un principe (le 9e).
+- **Les tarifs viennent quand tout est implémenté** ; ils ne bloquent rien avant.
+- **Généraliser à chaque pas** : un besoin manifestement commun est construit dès sa première
+  occurrence comme un module autonome, réutilisable par le centre, les apps, le Cockpit et Pono.
+  La règle « un module entre dans le socle quand deux produits en ont besoin » s'assouplit : quand
+  le second usage est déjà connu, on n'attend pas qu'il arrive.
+
+**Pourquoi.** Une démo qu'on joue vend mieux qu'une page qui promet, et elle prouve d'abord à
+nous-mêmes que le flux tient. Kete Intelligence partout fait de chaque app une porte vers le même
+système. Généraliser tôt évite d'écrire deux fois ce que le centre, les apps et Pono partagent.
+
+**Ce que ça coûte.** Une démo par app à tenir à jour avec l'app. Généraliser trop tôt peut figer
+un module avant de connaître son second usage : on ne généralise que ce dont le second usage est
+déjà connu.

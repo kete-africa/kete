@@ -6,7 +6,8 @@
 valider avec des locuteurs et des tisserands). Le kente se tisse en bandes étroites assemblées en
 un seul tissu : des capacités modulaires sur un même socle.
 
-- Domaine : **kete.africa**. Organisation GitHub : **kete-africa** (`kete` était pris).
+- Domaine : **kete.software** (D-059, parce que Kete vise le monde ; auparavant kete.africa).
+  Organisation GitHub : **kete-africa** (`kete` était pris).
 - Risque connu : **Kete Inc.** (getkete.com, IA pour la gestion de patrimoine, États-Unis) a déposé
   la marque KETE aux États-Unis le 28 avril 2026. Voir D-001.
 

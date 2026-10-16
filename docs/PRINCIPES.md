@@ -3,7 +3,7 @@
 > La manière de penser la digitalisation à l'ère de l'IA. Une décision qui les contredit est
 > refusée, même si elle rapporte.
 
-## Les sept principes
+## Les neuf principes
 
 1. **On capitalise des savoir-faire, pas des processus.** L'unité de base est le skill : un
    savoir-faire écrit, versionné, testé, partagé.
@@ -18,6 +18,10 @@
    portables d'un modèle à l'autre.
 7. **Partir du réel.** On augmente la façon dont les gens travaillent déjà : WhatsApp, la voix, le
    cash, le mobile money.
+8. **Chaque app se montre avant de se vendre.** Elle a sa démo publique, jouable sans compte : on y
+   joue les rôles et on voit ce qu'elle fait vraiment (D-059).
+9. **Kete Intelligence est dans chaque app.** Le même tiroir et les mêmes règles partout : agir
+   avec les droits de la personne, préparer, laisser décider (D-059).
 
 ## L'échelle d'autonomie des agents
 
