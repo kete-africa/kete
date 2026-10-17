@@ -116,7 +116,11 @@ comparés à une maquette validée, sa documentation et ses schémas.
 | A3 | `kete-core` 113, `kete-enterprise` 089 | `@kete/threads`, `@kete/channels` : fils, groupes, trace, pont mail, WhatsApp, routeur | Un message client arrive dans le fil de son projet avec un responsable |
 | A4 | `kete-core` (`shell`, `design`), `kete-enterprise` 090 | La maquette v5 validée, puis les écrans : « Pour moi », le fil et son état, le fil « Kete », Planifier, Mon tableau, un agent, le téléphone | Chaque écran à côté de la maquette, ordinateur et téléphone, clair et sombre |
 | A5 | les 4 apps du centre | Kete Finance, Team, Commitments, Support sur le modèle unifié | Chaque app écrit ses tenues et passe ses gestes par les politiques |
-| A6 | `kete-core`, `kete-enterprise` | Les références : lieux, actifs et parc installé, catalogue, groupe ; le savoir unifié | Le dimensionnement solaire tire ses prix du catalogue et l'ensoleillement du lieu |
+| A6 | `kete-core`, `kete-enterprise`, les apps | D-060 : d'abord le paramétrage commun ; puis le test de solidité sur trois parcours de KYA et une journée de pressing ; l'entité juridique sur les faits, les contacts des tiers, les phases d'une affaire, les axes de l'argent, le calendrier, les unités de mesure ; les lieux, le catalogue (kits, prix datés), le stock, le parc installé ; la fabrication essentielle (nomenclature, ordre de fabrication, traçabilité, contrôle de sortie) ; le savoir unifié | Un onduleur fabriqué, posé chez un client et dépanné sous garantie se suit de bout en bout ; le dimensionnement solaire tire ses prix du catalogue et l'ensoleillement du lieu |
+
+**Le chemin vers le compte autonome de KYA** (D-060), avant tout le reste : le paramétrage commun,
+A6 essentiel, B1, B3, B2 minimal, C4, puis E3 à E5. La facturation (B4) et les tarifs viennent après
+le test de KYA, sur un plan pilote.
 
 ### Voie B — Vendre et déployer Kete Enterprise (dès A2)
 
@@ -134,6 +138,7 @@ comparés à une maquette validée, sa documentation et ses schémas.
 | C1 | `kete-cockpit` | Le suivi de toutes les Kete Apps : événements, santé, manifeste, chiffres ; le brief du matin ; l'agent par MCP |
 | C2 | `nettio`, `firmo`, `nyatefe` | Kete Intelligence dedans, la démo publique, les événements au Cockpit ; Nyatefe décrit par l'auteur avant d'être construit |
 | C3 | les 4 apps du centre, `kete-cockpit`, Kete Enterprise | La même chose pour chacune : Kete Intelligence, la démo publique, le suivi |
+| C4 | `kete-core` (`agents`, `intelligence`, `sandbox`), Kete Enterprise | Des agents à niveau (D-060) : recherche sur le web, réponse à voix haute et appel, import d'outils OpenAPI et MCP, un ordinateur dans le bac à sable, sous-agents ; sous les politiques |
 
 **Preuve** : chaque app de la liste ouvre sa démo publique sans compte et apparaît au Cockpit.
 

@@ -1122,3 +1122,64 @@ système. Généraliser tôt évite d'écrire deux fois ce que le centre, les ap
 **Ce que ça coûte.** Une démo par app à tenir à jour avec l'app. Généraliser trop tôt peut figer
 un module avant de connaître son second usage : on ne généralise que ce dont le second usage est
 déjà connu.
+
+## D-060 — Le paramétrage commun, des fiches solides, la fabrication et des agents à niveau
+
+**Tranché le 2026-10-17** par l'auteur (« Je valide, suis le plan et continue »), sur la discussion
+du même jour : le rôle de chaque fiche, le groupe, la solidité du modèle, le paramétrage des apps,
+la fabrication chez KYA (« KYA commercialise des systèmes électroniques fabriqués de bout en bout.
+On peut faire l'essentiel et après ajouter »), et les agents face à Grok et Rakazo. Précise D-041,
+D-047, D-056 et D-059.
+
+**Tranché ainsi.**
+- **Un paramétrage commun, présent partout comme Kete Intelligence.** Chaque réglage est déclaré une
+  fois par son propriétaire — le socle ou une app, dans son manifeste — avec son schéma, son défaut,
+  les couches où il se fixe, qui peut le changer, ses mots et sa sensibilité ; ses changements sont
+  journalisés. Il se résout par couches, la plus précise l'emporte, et l'écran dit d'où vient la
+  valeur : Kete (les défauts), l'organisation, l'entité juridique ou l'unité, l'app, la personne,
+  l'appareil. Les préférences de la personne (langue, thème, fuseau, heures calmes…) vivent dans le
+  Compte Kete et la suivent dans toutes les apps ; aucune app ne lit plus sa devise ou sa langue
+  dans une variable d'environnement. Le même panneau « Réglages » est dans le cadre de chaque app.
+- **Le groupe n'est pas une fiche** : la structure souple (D-041) le représente déjà — des unités
+  dont le type est marqué « entité juridique ». Ce qui manquait est **l'entité juridique portée par
+  les documents et les faits** (qui facture, numérotation, consolidation) et sa fiche (NIF, RCCM,
+  mentions, devise, séries), qui est une couche du paramétrage.
+- **Toutes les fiches suivent les mêmes règles** : un identifiant stable et la fusion des doublons ;
+  des dates de validité, l'historique gardé ; un responsable ; un fil et un journal ; une
+  confidentialité ; des identifiants externes pour reprendre l'existant ; une seule source de
+  vérité, citée et jamais recopiée.
+- **Ce qui complète l'existant** : les contacts d'un tiers et les liens entre tiers ; les phases
+  d'une affaire, de la demande au SAV (une opportunité est une affaire en phase « demande ») ; les
+  axes de chaque fait d'argent (entité, unité, projet, poste) ; le calendrier de l'organisation
+  (jours ouvrés, fériés par pays, heures ouvrées) ; les unités de mesure et leurs conversions.
+- **Les nouvelles fiches** : les lieux ; le catalogue (articles, prestations, kits composés, prix
+  datés) ; le stock et ses mouvements ; les actifs et le parc installé (une garantie est une
+  obligation d'un contrat qui vise des actifs).
+- **La fabrication, l'essentiel d'abord** : la nomenclature sur plusieurs niveaux, l'ordre de
+  fabrication qui consomme le stock et produit des articles numérotés, la traçabilité des
+  composants par numéro de série, le contrôle de sortie avec sa preuve. Les gammes, la
+  planification des besoins et le coût de revient viennent après.
+- **Un test de solidité avant de coder les fiches** : trois parcours réels de KYA (une fabrication,
+  une vente avec pose, un SAV sous garantie) et une journée de pressing, déroulés champ par champ
+  sur le modèle ; chaque case d'un document retrouve sa fiche ou son fait.
+- **Des agents à niveau** (étape C4) : la recherche sur le web, la réponse à voix haute et l'appel,
+  l'import d'outils (OpenAPI, serveurs MCP distants), un ordinateur pour l'agent dans le bac à sable,
+  la délégation à des sous-agents — toujours sous les politiques, les gestes engageants en
+  brouillon. Une bibliothèque d'abord, un service seulement sans équivalent de même qualité.
+- **Hors du modèle, jusqu'à un client réel** : la paie, la comptabilité générale légale (un
+  connecteur vers le logiciel comptable), la vente en ligne.
+- **Les outils métier sont des compositions** : le socle, les fiches communes, des briques métier
+  partagées (flux d'étapes, fiche de coût, caisse, documents légaux, périphériques, créneaux) et un
+  petit cœur propre au métier. Une app vendue seule garde ses fiches et les fait promouvoir au centre
+  quand elle le rejoint. Rien n'est élargi avant le test de KYA.
+
+**Pourquoi.** Chaque app réglait sa langue, sa devise et son thème à sa manière, et le Compte Kete
+avait des réglages que personne ne lisait : un paramétrage commun fait gagner chaque app et suit la
+personne partout. Un modèle solide se prouve sur de vrais documents, pas sur une grille. Une
+entreprise qui fabrique ne tient pas sans nomenclature ni traçabilité. Des agents en deçà des
+assistants grand public seraient un recul, quelle que soit la qualité du reste.
+
+**Ce que ça coûte.** Un module de plus à brancher dans toutes les apps et le Compte Kete. Le test de
+solidité demande les vrais documents de KYA. La fabrication et le stock élargissent A6 ; le chemin
+vers le compte autonome de KYA (paramétrage, A6 essentiel, B1, B3, B2, C4, E3 à E5) passe avant
+tout le reste.
