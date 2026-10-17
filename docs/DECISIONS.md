@@ -1136,8 +1136,8 @@ D-047, D-056 et D-059.
   fois par son propriétaire — le socle ou une app, dans son manifeste — avec son schéma, son défaut,
   les couches où il se fixe, qui peut le changer, ses mots et sa sensibilité ; ses changements sont
   journalisés. Il se résout par couches, la plus précise l'emporte, et l'écran dit d'où vient la
-  valeur : Kete (les défauts), l'organisation, l'entité juridique ou l'unité, l'app, la personne,
-  l'appareil. Les préférences de la personne (langue, thème, fuseau, heures calmes…) vivent dans le
+  valeur : Kete (les défauts), l'organisation, l'app (pour toute l'organisation), l'entité
+  juridique ou l'unité (une filiale, un site : plus précise que l'app), la personne, l'appareil. Les préférences de la personne (langue, thème, fuseau, heures calmes…) vivent dans le
   Compte Kete et la suivent dans toutes les apps ; aucune app ne lit plus sa devise ou sa langue
   dans une variable d'environnement. Le même panneau « Réglages » est dans le cadre de chaque app.
 - **Le groupe n'est pas une fiche** : la structure souple (D-041) le représente déjà — des unités
