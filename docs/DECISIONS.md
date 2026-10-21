@@ -1183,3 +1183,129 @@ assistants grand public seraient un recul, quelle que soit la qualité du reste.
 solidité demande les vrais documents de KYA. La fabrication et le stock élargissent A6 ; le chemin
 vers le compte autonome de KYA (paramétrage, A6 essentiel, B1, B3, B2, C4, E3 à E5) passe avant
 tout le reste.
+
+## D-061 — Les fils, lieu de l'entreprise ; Kete, sa porte ; les agents, ses délégués
+
+**Tranché le 2026-10-21** par l'auteur, après une journée de discussion qui a suivi son test des fils,
+puis sur les maquettes v6 à v6.2 (« C'est complet ? Si oui, rédige toutes les décisions et implémente
+de bout en bout »). Précise D-056, D-057, D-058 et D-060. S'inspire de WhatsApp, Slack, Linear,
+Grok Bot, Rakazo et Chatwoot, sans reprendre leur logiciel. La maquette de référence est
+`kete-core/docs/brief-ui/canevas-v6.2.html`.
+
+**Tranché ainsi.**
+
+- **Kete est pour les gens de l'entreprise.** Les clients restent sur WhatsApp et le mail ; ce qu'ils
+  écrivent entre dans le fil de leur objet. Pas de « relation client » à la Chatwoot. Une seule
+  idée en reste : une conversation qui demande quelque chose a toujours un responsable, la tenue.
+- **Quatre mots, un rôle chacun.**
+  - **Les fils** sont le lieu : le canal interne de toute l'entreprise.
+  - **Kete** est l'assistant de chacun. Il agit en tant que la personne, jamais au-delà de ses
+    droits. Il est la porte d'entrée : il répond lui-même ou confie le travail aux bons agents, en
+    parallèle.
+  - **Les agents** sont des délégués : une fiche de poste, un responsable humain, un budget, des
+    déclencheurs et leur propre fil.
+  - **Kete Intelligence** est le moteur : le modèle, le tour d'agent, les droits, les politiques, la
+    mesure. Le tiroir de chaque app n'est qu'un raccourci vers le fil Kete de la personne.
+- **Une seule conversation.**
+  - Parler à Kete se fait dans un fil privé. On peut y inviter un collègue ; il devient alors un
+    groupe.
+  - « @Kete » dans un fil lance le même tour visible que Kete Intelligence.
+  - Dans un fil, Kete ne répond devant tous qu'avec ce que tous les membres peuvent lire. Sinon, sa
+    réponse est « Seulement pour vous », et la personne peut la partager.
+  - Ouvrir un objet, c'est ouvrir son fil.
+- **Les modules.**
+  - `@kete/threads` garde les données.
+  - `@kete/conversation` est l'écran des fils, réutilisable par toute app.
+  - Un seul champ de saisie, dans `@kete/design`, partagé avec Kete Intelligence.
+- **Le confort d'une conversation d'aujourd'hui.**
+  - Les vocaux sont transcrits ; le micro remplace la dictée.
+  - Les notifications sur le téléphone se règlent par fil (toutes, mentions, aucune) et ne sonnent
+    que si l'ordinateur n'a pas vu.
+  - Les photos s'affichent en miniature et s'ouvrent en grand.
+  - Les fichiers vont jusqu'à 100 Mo et sont stockés hors de la base.
+  - Les messages se chargent par pages de cinquante ; un brouillon est gardé par fil.
+  - Les réactions, « … écrit », les épingles et l'aperçu des liens.
+  - Supprimer un message laisse « Message supprimé » ; l'original reste dans la preuve.
+- **Le champ de saisie.**
+  - Une ligne qui grandit ; 🎤 devient ➤ dès qu'on écrit.
+  - ＋ ; « / » ; « @ » pour quelqu'un ; « # » pour quelque chose.
+  - Deux bascules, qui reviennent par défaut après l'envoi :
+    - « Interne / Au client » : le cadre passe en alerte et le canal est dit ;
+    - « Pour info / Pour action » : à qui, pour quand, quelle priorité.
+  - Sur un message, trois gestes visibles ; le reste sous « ⋯ ».
+- **« Infos du fil »**, comme sur WhatsApp : chercher, les notifications, les épinglés, les photos et
+  vidéos, les documents et leurs versions, les liens, les vocaux, les actions, les décisions, les
+  membres.
+- **Citer un objet avec « # ».**
+  - On peut citer un projet, un tiers, un ticket, un devis, une facture, un contrat, un congé, un
+    document, une décision, une action, une réunion ou un équipement.
+  - L'étiquette dit l'état de maintenant et respecte les droits.
+  - L'objet garde la liste des fils où il est cité (« Cité dans ») ; un fil peut se rattacher à
+    plusieurs objets.
+  - Kete suggère un lien, sans l'imposer.
+- **Confier une tâche suit un seul chemin**, dans cet ordre :
+  1. capter : un vocal, un message, un mail ;
+  2. comprendre ;
+  3. rattacher à l'objet ;
+  4. proposer un lot de gestes ;
+  5. la personne confirme ;
+  6. exécuter : tenues, politiques, agents ;
+  7. suivre : rappel, suppléant, puis manager ;
+  8. rendre au responsable de l'étape suivante.
+
+  Une consigne qui énonce une règle (« tout achat au-delà de 50 000 F passe par moi ») devient une
+  politique, proposée et simulée. Le reste devient des tenues.
+- **Les agents, comme des collègues.**
+  - Chacun a son fil ; on lui confie un travail en lui parlant.
+  - Son état se voit d'un coup d'œil : a besoin de vous, travaille, a fini, en veille.
+  - Son travail se lit en plan et en étapes repliées. On peut l'arrêter, ou lui parler sans
+    l'arrêter.
+  - Ses demandes ne bloquent rien : « Autoriser une fois », « Toujours… » (qui propose une politique
+    simulée) ou « Refuser ». Une demande venue d'une routine expire, et rien ne part.
+  - Signer et payer reviennent toujours à la personne.
+  - Un agent se crée en une phrase et commence en essai.
+- **Un agent n'est jamais responsable d'une tenue**, seulement son délégué : la tenue a toujours une
+  personne pour responsable.
+  - **La prise en charge** se règle dans sa fiche, geste par geste : jamais, propose (par défaut), ou
+    prend seul (gagné par les preuves).
+  - **Chaque tenue dit à qui rendre** : à qui revient l'étape suivante selon la politique ou le
+    circuit, sinon à qui l'a confiée. Le résultat est toujours posté dans le fil de l'objet. Si
+    personne n'est désigné, l'agent demande.
+- **Savoir-faire, routine, agent** : le comment, le quand, le qui. Une consigne qui revient est une
+  routine. Un poste avec du jugement et un responsable est un agent.
+- **L'ordinateur d'un agent** (le bac à sable) se règle agent par agent, avec un plafond de minutes.
+  Il ne sert que pour un site sans API, un savoir-faire avec des scripts, un gros fichier ou la
+  fabrication d'une app. Le reste passe par les capacités de Kete.
+- **Les mails.**
+  - Les boîtes communes sont lues en entier.
+  - D'une boîte personnelle, Kete ne lit que les échanges avec un contact connu d'un objet, le
+    dossier « Kete » et les mails qui mettent un fil en copie. Jamais le reste. Les Envoyés suivent
+    la même règle.
+  - Un mail trouve son fil dans cet ordre : ses en-têtes de réponse, l'adresse du fil, un contact
+    connu, le modèle quand il est sûr ; sinon, il va « à classer ».
+  - Il devient un message propre, l'original à un clic. Lu dans deux boîtes, il ne s'affiche qu'une
+    fois. Ses pièces jointes rejoignent les fichiers du fil.
+- **Les autres conversations.**
+  - Les groupes WhatsApp personnels entrent par leur export, jamais par une bibliothèque non
+    officielle. De même pour les exports Telegram et les mails en fichier.
+  - Le compte rendu d'une réunion entre dans son fil, et ses actions deviennent des tenues.
+  - Deux fils peuvent être fusionnés.
+- **La fluidité.** Un objet, un seul endroit. On ne choisit jamais l'outil. Décidé là où l'on est,
+  décidé partout. Rien n'est ressaisi. Les agents parlent peu. On n'est dérangé que si c'est
+  nécessaire.
+- **Le dessin.** Aucun composant ne porte de bordure colorée à gauche. L'état se dit par une
+  étiquette, une icône ou une teinte.
+
+**Pourquoi.** Le fil doit être l'environnement de discussion de l'entreprise. Sans le confort d'un
+chat d'aujourd'hui, les équipes restent dans leurs groupes WhatsApp et leurs mails, et Kete ne voit
+rien. Avoir deux conversations (les fils et Kete Intelligence), c'était avoir deux mémoires. Enfin,
+les agents ne sont utiles que si l'on voit ce qu'ils font, s'ils ne bloquent personne et si une
+personne en répond.
+
+**Ce que ça coûte.**
+- Un module d'écran de plus dans le noyau.
+- Le stockage des fichiers hors de la base.
+- Une migration : la tenue ne peut plus avoir un agent pour responsable.
+
+Restent ouverts : le domaine des adresses de fil, à choisir par l'auteur, et la carte des flux de
+chaque module, qui attend les chiffres réels de KYA.
