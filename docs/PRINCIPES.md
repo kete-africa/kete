@@ -3,7 +3,7 @@
 > La manière de penser la digitalisation à l'ère de l'IA. Une décision qui les contredit est
 > refusée, même si elle rapporte.
 
-## Les neuf principes
+## Les douze principes
 
 1. **On capitalise des savoir-faire, pas des processus.** L'unité de base est le skill : un
    savoir-faire écrit, versionné, testé, partagé.
@@ -22,6 +22,29 @@
    joue les rôles et on voit ce qu'elle fait vraiment (D-059).
 9. **Kete Intelligence est dans chaque app.** Le même tiroir et les mêmes règles partout : agir
    avec les droits de la personne, préparer, laisser décider (D-059).
+10. **L'objet au centre.** Tout ce qui compte est un objet, avec son fil, sa personne responsable
+    et ses axes — le projet, le tiers, l'unité, la personne. Rien n'existe à côté d'un objet, et
+    tout se filtre par ses axes (D-062).
+11. **Déclaré une fois, servi partout, avec les mêmes droits.** Ce qu'une app déclare — ses objets,
+    ses outils, ses données, ses chiffres — sert à la fois les écrans, Kete, les agents, les
+    copilotes et les tableaux ; chacun voit exactement ce que la personne voit (D-062).
+12. **Un module n'est fini que lorsqu'il sert les autres.** On ne se demande pas seulement ce que
+    montre l'écran, mais ce que le module doit au reste du système (D-062).
+
+## La définition de « fini »
+
+Un module ou une app est fini quand il répond à sept questions ; une question peut recevoir « sans
+objet », avec sa raison (D-062, R10) :
+
+1. Quels sont ses objets, et leurs axes ?
+2. Quel est le fil de chaque objet ?
+3. Quels sont ses droits, sur la structure et sur les objets ?
+4. Quels outils donne-t-il à Kete, aux agents et aux copilotes ?
+5. Quelles données et quels chiffres fournit-il, avec leur preuve ?
+6. Quelles surveillances propose-t-il ?
+7. Où sont sa documentation, son diagramme, sa maquette, ses données de démonstration ?
+
+Les vingt-deux règles du système sont dans D-062.
 
 ## L'échelle d'autonomie des agents
 
