@@ -1309,3 +1309,153 @@ personne en répond.
 
 Restent ouverts : le domaine des adresses de fil, à choisir par l'auteur, et la carte des flux de
 chaque module, qui attend les chiffres réels de KYA.
+
+## D-062 — L'objet au centre : vingt-deux règles pour un système complet par construction
+
+**Tranché le 2026-10-23** par l'auteur, au terme de deux jours de discussion (« note les toutes […]
+ces règles vont te guider après » ; « Ajuste ce que tu dois » ; « Rajoute et on continue » ; « Vas y
+en actualisant d'abord les principes et décisions » ; « on raisonne au dessus de KYA »). Précise
+D-047, D-052, D-056, D-058 et D-061, et les principes 2, 4 et 5, sans les réécrire. S'inspire de
+NocoBase et de Microsoft Copilot Studio, lus en profondeur, sans reprendre leur logiciel. La
+première entreprise qui éprouvera ces règles viendra après : elles sont écrites pour toute
+organisation.
+
+**Le constat.** En vérifiant le code, les modules se sont révélés bien faits un à un, mais
+construits chacun pour son écran, sans contrat envers les autres. Les agents ne reçoivent pas les
+outils des apps ; les tableaux de bord ignorent le projet ; quatre systèmes de chiffres coexistent
+(les indicateurs de la performance, les tableaux sur jeux de données, `@kete/metrics`, les jeux de
+données des apps) ; trois chemins séparés connectent un outil externe. Aucun n'est un défaut : ce
+sont des liens qu'aucune règle n'exigeait.
+
+**Tranché ainsi.**
+
+*La structure*
+
+- **R1 — L'objet au centre.** Tout ce qui compte est un objet — un projet, un tiers, un ticket, une
+  facture, un contrat, un équipement. Un objet a un fil, une personne responsable, une équipe, et
+  des axes. Rien n'existe à côté d'un objet.
+- **R2 — Quatre axes, partout.** Le projet, le tiers, l'unité, la personne. Une tenue, une date, un
+  fait d'argent, un mail, une ligne de données, un chiffre, un agent portent les axes de leur objet ;
+  filtrer par projet marche partout sans code particulier. On n'ajoute pas d'axe pour un besoin : un
+  site est une sorte d'unité.
+- **R3 — Déclaré une fois, servi partout.** Une app déclare ses objets, ses outils, ses jeux de
+  données, ses chiffres, ses surveillances, ses vues et ses raccourcis. Les écrans, Kete, les
+  agents, les copilotes par MCP, les tableaux et les résumés lisent cette seule déclaration ; aucun
+  ne tient sa propre liste.
+- **R4 — Les mêmes droits partout** (principe 4, D-047). Ce qu'une personne voit à l'écran est
+  exactement ce que voient son Kete, ses agents, ses tableaux et ses copilotes.
+- **R5 — Un agent, c'est Kete réduit à une fiche.** Il reçoit les outils de sa personne, filtrés par
+  sa fiche, ses niveaux, son budget et les politiques. Sa fiche choisit ses sources d'outils —
+  telle app oui, telle autre non — pour qu'il choisisse mieux et coûte moins. Délégué, jamais
+  responsable (D-061).
+- **R6 — Un seul modèle d'acteur.** Une personne, un agent, Kete, un contact ont un nom, un avatar,
+  une forme et une provenance, dessinés de la même façon partout. L'agent a un carré arrondi, la
+  personne un rond : on ne confond jamais un agent avec un collègue.
+- **R7 — Un chiffre est vivant et prouvé.** Il est lu à l'ouverture, avec les droits du lecteur et
+  les filtres du tableau, et il montre d'où il vient. Il n'est figé que dans un résumé, par choix
+  (D-052).
+- **R8 — Une connexion, trois usages.** Un outil externe se connecte une seule fois ; il sert à lire
+  (les tableaux, Kete), à agir (les agents, en brouillon) et à signaler (« Décider »). Lire, agir et
+  signaler sont trois permissions distinctes ; agir n'est jamais accordé par défaut.
+- **R9 — Ce qui engage passe par un brouillon** (« l'IA prépare, l'humain valide »).
+- **R10 — Un module n'est fini que lorsqu'il sert les autres.** Il répond à sept questions : ses
+  objets et leurs axes ; le fil de chaque objet ; ses droits sur les deux axes ; les outils qu'il
+  donne à Kete, aux agents et aux copilotes ; les données et les chiffres qu'il fournit ; ses
+  surveillances ; sa documentation, son diagramme, sa maquette. Une question peut recevoir « sans
+  objet », avec sa raison.
+
+*La vie dans le temps*
+
+- **R11 — Les événements.** Un objet qui change le dit ; son fil, les agents, les tableaux et
+  « Pour moi » l'apprennent. Dynamique veut dire « mis à jour sous les yeux », pas seulement
+  « relu ». Bâti sur ce qui existe (la file sortante, le direct des fils), sans nouveau service ;
+  un événement reçu deux fois n'agit qu'une fois.
+- **R12 — La vie d'un objet.** Naître, changer d'état, se clore, s'archiver, se conserver,
+  s'exporter, s'effacer — et ce que deviennent alors son fil, ses agents, ses tableaux. Les durées
+  de conservation relèvent du droit et de l'auteur : Kete propose des valeurs, l'auteur tranche.
+- **R13 — Une seule identité par objet, entre les apps.** Le client d'une app et le tiers du centre
+  sont un seul tiers ; l'objet né d'une app garde d'où il vient. Kete propose la fusion de deux
+  doublons ; une personne la confirme. Jamais de fusion automatique.
+- **R14 — L'attention.** Un seul modèle décide qui est prévenu, de quoi, par quel canal, une seule
+  fois : « Pour moi », le téléphone, WhatsApp, Telegram, le niveau choisi par fil.
+- **R15 — Tout objet se cherche et se cite**, indexé avec ses droits, cité par « # », retrouvé par
+  Kete et les agents.
+- **R16 — La preuve.** Tout geste est journalisé — qui, pour qui, par quel canal, quand — et
+  « Comment ? » a toujours une réponse, pour chaque module, les agents et les connexions compris.
+- **R17 — Le mode dégradé.** Une app qui ne répond pas, une connexion expirée, un plafond atteint :
+  l'écran le dit (absent, refusé, à reconnecter). Rien ne casse en silence. Une donnée absente se
+  montre comme telle, jamais comme un zéro.
+- **R18 — Le coût visible.** L'IA, les minutes d'ordinateur, les appels externes sont mesurés par
+  organisation, par unité, par agent et par personne, avec des budgets ; une demande de rallonge
+  arrive dans « Décider ».
+- **R19 — Le terrain** (principe 7). Un téléphone en 3G, le français, le franc CFA, les fuseaux ; le
+  hors-ligne plus tard.
+- **R20 — Chaque module se démontre** (principe 8) : ses données de démonstration et ses captures
+  face à la maquette font partie de « fini ».
+- **R21 — Un agent se prouve** (principe 5). Kete et chaque agent ont un jeu de cas tiré de leurs
+  vraies tâches et de cas écrits ; il est rejoué avant tout changement de fiche, de modèle ou
+  d'outils, avec les droits d'une personne donnée, noté (le sens, la sécurité), et sa note paraît
+  dans le bilan de l'agent.
+- **R22 — Un composant, mille usages.** Quelques composants génériques — la fiche d'objet, la
+  collection, le chiffre, le tableau de bord, le formulaire, la frise, avec le fil, le champ de
+  saisie et la carte de brouillon — configurés à l'endroit où ils servent. La configuration est une
+  donnée, versionnée et prouvée, jamais du code ni du SQL : l'app donne le réglage par défaut,
+  l'organisation l'ajuste par poste, la personne fait sa version, et Kete peut la changer sur une
+  phrase. La même configuration s'affiche dans Kete, sur le téléphone et chez les copilotes
+  (D-037).
+
+*Le poids des règles.* R1 et R2 d'abord, puisque tout en dépend ; puis R3, R5, R7 avec R11, et R8 :
+ce sont elles qui créent les liens. R12 à R20 sont des garanties de qualité : elles empêchent un
+module livré de se dégrader.
+
+*Trois orientations de l'auteur*
+
+- **Des agents disponibles pour tous, livrés avec le système.** Le cœur et chaque app livrent des
+  agents prêts (D-039 en prévoit le type) : l'administrateur les active, chacun les reçoit selon son
+  poste, et ils agissent pour la personne qui s'en sert, avec ses droits (R5), évalués (R21).
+- **La manière d'évaluer les gens peut changer.** L'évaluation peut reposer sur ce qui s'est
+  réellement passé dans les objets — les promesses tenues, les tenues closes à temps, l'aide
+  apportée, les idées retenues — plutôt que sur ce qu'on déclare. Les garde-fous : la personne voit
+  ses propres données d'abord et en continu ; seuls les indicateurs notifiés par écrit servent à
+  l'évaluer ; le reste l'aide, jamais il ne la note ; l'IA prépare, une personne juge. Ce n'est pas
+  de la surveillance : on mesure des résultats, jamais une activité.
+- **Ce qui fait un bon agent**, à permissions égales, dans l'ordre : le contexte de l'objet, la
+  qualité des outils et des données, les savoir-faire de la maison, la clarté de la fiche, la boucle
+  de corrections, puis le modèle. Les procédures écrites d'une entreprise deviennent naturellement
+  les savoir-faire de ses agents.
+
+*Ce que l'on prend ailleurs, et ce que l'on ne prend pas*
+
+- **Pris** : les évaluations d'agents (R21) ; les variables de contexte dans les tableaux (« ce
+  projet », « moi », « mon unité ») et le filtre de page qui alimente toutes les cartes ; les
+  déclencheurs d'événements pour les agents ; les raccourcis de tâches et les modèles d'agents
+  déclarés par les apps ; une mémoire par personne, privée, qu'elle voit et efface, éteinte dans
+  les fils de groupe ; les budgets de coût avec demande de rallonge ; l'inventaire des agents pour
+  l'administrateur ; les versions de la fiche d'un agent ; des permissions au niveau du champ
+  seulement quand un besoin réel le demande.
+- **Pas pris** : le constructeur d'apps sans code (nos apps sont du code, déclaré une fois) ; le SQL
+  et le JavaScript dans les graphiques ; les agents à scénarios figés ; l'agent qui parle
+  directement aux clients avec renvoi à un humain (D-061 garde les clients sur WhatsApp et le mail,
+  dans le fil de leur objet).
+- **Ce qui reste propre à Kete** : le fil d'objet comme lieu de travail ; « Kete propose, la
+  personne confirme », avec les politiques nées d'une phrase ; WhatsApp et Telegram en premier ; le
+  terrain.
+
+*Comment on prouve qu'un système est complet.* Les règles seules ne le prouvent pas. Deux épreuves
+le font : un audit de chaque module et de chaque app contre R1 à R22, vérifié dans le code, dont le
+tableau « fait / manque » devient le plan ; puis une journée réelle d'une entreprise, de bout en
+bout. Là où elle casse, il manque un lien.
+
+**Pourquoi.** Les trous trouvés en deux jours ont une seule cause : on a élargi plus vite qu'on n'a
+relié. Avec ces règles, chaque spec devient un contrat entre modules ; on ne se demande plus
+seulement ce que montre l'écran, mais ce que le module doit à Kete, aux agents, aux tableaux et aux
+autres apps. Le système devient complet par construction, et non par rattrapage.
+
+**Ce que ça coûte.**
+- Chaque spec coche la définition de fini (R10), et les specs déjà livrées passent l'audit.
+- Des reprises : un seul système de chiffres au lieu de quatre, une seule manière de connecter un
+  outil au lieu de trois, des agents qui reçoivent enfin les outils des apps.
+- Un passage technique en profondeur avant toute construction : ce qui est encore une proposition
+  (le module de la Mesure, les types d'objets et leurs liens, la liste des composants et des
+  graphiques, la place d'un ERP existant) est consigné dans
+  `journal/2026-10-23-l-objet-au-centre.md` et sera tranché par ce passage.
